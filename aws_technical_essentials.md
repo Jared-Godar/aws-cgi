@@ -200,3 +200,337 @@ Any AWS customer can use IAM; the service is offered at no additional charge.
 
 ## Module II: AWS Compute
 
+### Compute as A service
+
+#### Servers
+
+- First building block you need to host an application is a server
+- Handle Hypertext Transfer Protocol (HTTP) requests and send responses to clients following the client-server model
+- Servers power your application by providing CPU, memory, and networking capacity to process users’ requests and transform them into responses. 
+
+** Resources**
+
+- [External Site: AWS: Compute Services Whitepaper](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/compute-services.html)
+- [External Site: AWS: Compute on AWS](https://aws.amazon.com/products/compute/)
+- [External Site: AWS: AWS Compute Blog](https://aws.amazon.com/blogs/compute/)
+
+### Elastic Compute Cloud (EC2)
+
+- Amazon EC2 is a web service that provides secure, resizable compute capacity in the cloudProvision virtual servers called EC2 instances
+- To create an EC2 instance, you must define the following:
+  - Hardware specifications, like CPU, memory, network, and storage
+  - Logical configurations, like networking location, firewall rules, authentication, and the operating system of your choice
+
+#### Amazon Machine Image
+
+- You can select an AMI from the following categories:
+  - Quick Start AMIs, which are created by AWS to help you get started quickly
+    - AWS Marketplace AMIs, which provide popular open source and commercial software from third-party vendors
+    - My AMIs, which are created from your EC2 instances
+    - Community AMIs, which are provided by the AWS user community
+    - Build your own custom image with EC2 Image Builder
+
+**Resources**
+
+- [External Site: AWS: Amazon EC2](https://aws.amazon.com/ec2/)
+- [External Site: AWS: Amazon Machine Images (AMI)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
+- [External Site: AWS: Creating an Amazon EBS-backed Linux AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html)
+- [External Site: AWS: What Is EC2 Image Builder?](https://docs.aws.amazon.com/imagebuilder/latest/userguide/what-is-image-builder.html)
+
+### EC2 Instance Lifecycle
+
+- New instances on demand
+- Get rid of ones you don't need
+- Able to scale in or out
+
+#### Instance Types
+
+- Amazon EC2 instances are a combination of virtual processors (vCPUs), memory, network, and, in some cases, instance storage and graphics processing units (GPUs).
+- When you create an EC2 instance, you need to choose how much you need of each of these components.
+
+![families](families.png)
+
+![lifecycle](lifecycle.png)
+
+**Resources**
+
+- [External Site: AWS: Amazon EC2](https://aws.amazon.com/ec2/)
+- [External Site: AWS: Default VPC and Default Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html)
+- [External Site: AWS: AWS Reliability Pillar (PDF)](https://d1.awsstatic.com/whitepapers/architecture/AWS-Reliability-Pillar.pdf)
+- [External Site: AWS: Instance Lifecycle](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html)
+- [External Site: AWS: Amazon EC2 Pricing](https://aws.amazon.com/ec2/pricing/)
+- [External Site: AWS: Amazon EC2 On-Demand Pricing](https://aws.amazon.com/ec2/pricing/on-demand/)
+- [External Site: AWS: Amazon EC2 Spot Instances Pricing](https://aws.amazon.com/ec2/spot/pricing/)
+- [External Site: AWS: Amazon EC2 Reserved Instances Pricing](https://aws.amazon.com/ec2/pricing/reserved-instances/pricing/)
+
+### Container Services
+
+- AWS offers a broad spectrum of compute offerings that give you the flexibility to choose the right tool for the job
+  - Virtual machines (VMs)
+  - Containers (ie, Docker, Kubernetes)
+  - Serverless
+
+- Container orchestration tools
+- Shorter boot time than virtual machines
+
+**Resources**
+
+- [External Site: AWS: Containers on AWS](https://aws.amazon.com/containers/services/)
+- [External Site: Docker: What Is a Container?](https://www.docker.com/resources/what-container)
+- [External Site: AWS: Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
+- [External Site: Github: Amazon ECS Agent](https://github.com/aws/amazon-ecs-agent)
+- [External Site: AWS: Amazon ECS ContainerInstances](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html)
+- [Coursera Course: Building Containerized Applications on AWS](https://www.coursera.org/learn/containerized-apps-on-aws)
+
+### Serverless
+
+- If you run your code on Amazon EC2, AWS is responsible for the physical hardware, and you are responsible for the logical controls, such as guest operating system, security and patching, networking, security, and scaling.
+- If you run your code in containers on Amazon ECS and Amazon EKS, AWS is responsible for more of the container management, such as deploying containers across EC2 instances and managing the container cluster. However, when running ECS and EKS on EC2, you are still responsible for maintaining the underlying EC2 instances.
+- If you want to deploy your workloads and applications without having to manage any EC2 instances, you can do that on AWS with serverless compute.
+- EC2 or containers - must set up and maintain fleet of instances
+- Software and security patches, scaling, architecting solutions
+- Cannot see or access underlying structure or instances
+- Managemet of structures taken care of for you
+- *Abstracted*
+- Convenient to use - focus on value of service while not having to worry about operational details
+- Shifts some responsibility from you to AWS for many tasks
+
+### AWS Lambda
+
+- One of the serverless options
+- Create Lambda function 
+- Run in response to triggers
+- Trigger, code and configuration
+- Not billed for code that isn't running
+
+**Resources**
+
+- [External Site: AWS: Serverless](https://aws.amazon.com/serverless/#:~:text=Serverless%20is%20the%20native%20architecture,services%20without%20thinking%20about%20servers.)
+- [Coursera Course: Building Modern Python Applications on AWS](https://www.coursera.org/learn/building-modern-python-applications-on-aws)
+- [External Site: AWS: AWS Serverless Resources](https://aws.amazon.com/serverless/resources/?serverless.sort-by=item.additionalFields.createdDate&serverless.sort-order=desc)
+- [External Site: AWS: Building Applications with Serverless Architectures](https://aws.amazon.com/lambda/serverless-architectures-learn-more/)
+- [External Site: AWS: Best Practices for Organizing Larger Serverless Applications](https://docs.aws.amazon.com/lambda/latest/dg/lambda-functions.html)
+- [External Site: AWS: Managing AWS Lambda Functions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-functions.html)
+- [External Site: AWS: 10 Things Serverless Architects Should Know](https://aws.amazon.com/blogs/architecture/ten-things-serverless-architects-should-know/)
+- [External Site: AWS: AWS Alien Attack! A Serverless Adventure](https://alienattack.workshop.aws/)
+
+## Module 3: Networking
+
+- Networking is how you connect computers around the world and allow them to communicate with one another.
+- One way to think about networking is to think about sending a letter. When you send a letter, you provide the following three elements:
+  - The payload, or letter, inside the envelope.
+  - The address of the sender in the From section.
+  - The address of the recipient in the To section.
+- **IP addresses** Just like each home has a mailing address, each computer has an IP address. However, instead of using the combination of street, city, state, zip code, and country, the IP address uses a combination of bits, 0s and 1s.
+- **IPv4 notation** Typically, you don’t see an IP address in its binary format. Instead, it’s converted into decimal format and noted as an Ipv4 address.
+- **CIDR notation**  Classless Inter-Domain Routing (CIDR) notation. 
+  - CIDR notation is a compressed way of specifying a range of IP addresses
+
+**Resources**
+
+- [External Site: Stanford: Introduction to Computer Networking](https://web.stanford.edu/class/cs101/network-1-introduction.html)
+- [External Site: Wikipedia: Classless Inter-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+- [External Site: CIDR.xyz](https://cidr.xyz/)
+
+### Virtual Private Cloud
+
+- A virtual private cloud (VPC) is an isolated network that you create in the AWS Cloud, similar to a traditional network in a data center.
+- When you create a VPC, you must choose three main factors:
+  - Name of the VPC.
+  - Region where the VPC will live.
+    -  Each VPC spans multiple Availability Zones within the selected Region.
+  - IP range for the VPC in CIDR notation.
+    - This determines the size of your network.
+    - Each VPC can have up to four /16 IP ranges.
+
+#### Create a subnet
+
+- After you create your VPC, you must create subnets inside the network.
+- Smaller networks inside your base network
+- When you create a subnet, you must specify the following:
+  - VPC you want your subnet to live in. In this case: VPC (10.0.0.0/16)
+  - Availability Zone you want your subnet to live in. In this case: AZ1
+  - CIDR block for your subnet, which must be a subset of the VPC CIDR block. In this case: 10.0.0.0/24
+
+**Resources**
+
+- [External Site: AWS: VPC with Public and Private Subnets (NAT)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html)
+- [External Site: AWS: Custom Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html#CustomRouteTables)
+- [External Site: Customer Gateway](https://docs.aws.amazon.com/vpn/latest/s2svpn/how_it_works.html#CustomerGateway)
+- [External Site: AWS: What Is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+- [External Site: AWS: VPCs and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
+
+### VPC Routing
+
+#### Main route table
+
+- When you create a VPC, AWS creates a route table called the main route table.
+- A route table contains a set of rules, called routes, that are used to determine where network traffic is directed.
+- AWS assumes that when you create a new VPC with subnets, you want traffic to flow between them.
+- Therefore, the default configuration of the main route table is to allow traffic between all subnets in the local network.
+- The destination and target are two main parts of this route table.
+  - The **destination** is a range of IP addresses where you want your traffic to go. In the example of sending a letter, you need a destination to route the letter to the appropriate place. The same is true for routing traffic. In this case, the destination is the VPC network's IP range.
+  - The **target** is the connection through which to send the traffic. In this case, the traffic is routed through the local VPC network.
+
+### VPC Security
+
+- Secure subnets with network access control lists
+- Network Access Control Lists (Network ACLs)
+  - Firewall at subnet level
+- Secure EC2 instances with security groups
+  - Firewalls at the EC2 instance level
+  - The default configuration of a security group blocks all inbound traffic and allows all outbound traffic.
+
+**Resources**
+
+- [External Site: AWS: Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
+- [External Site: AWS: Example Routing Options](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html)
+- [External Site: AWS: Working with Routing Tables](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html)
+- [External Site: AWS: Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
+- [External Site: AWS: Security Groups for Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+- [External Site: AWS: I Host a Website on an EC2 Instance. How Do I Allow My Users to Connect on HTTP (80) or HTTPS (443)?](https://aws.amazon.com/premiumsupport/knowledge-center/connect-http-https-ec2/)
+
+## Module 4: Storage
+
+AWS storage services are grouped into three categories – block storage, file storage, and object storage.
+- **File storage** File storage is ideal when you require centralized access to files that need to be easily shared and managed by multiple host computers.
+- Common use cases for file storage include:
+  - Large content repositories
+  - Development environments
+  - User home directories
+- **Block storage** While file storage treats files as a singular unit, block storage splits files into fixed-size chunks of data called blocks that have their own addresses. Since each block is addressable, blocks can be retrieved efficiently.
+- **Object storage** Objects, much like files, are treated as a single unit of data when stored. However, unlike file storage, these objects are stored in a flat structure instead of a hierarchy. Each object is a file with a unique identifier.
+
+**Resources**
+
+- [External Site: AWS: What Is Cloud Storage](https://aws.amazon.com/what-is-cloud-storage/)
+- [External Site: AWS: Types of Cloud Storage](https://aws.amazon.com/what-is-cloud-object-storage/#types)
+
+### EC2 Instance and Block Storage
+
+#### Amazon EC2 instance store
+
+- Amazon EC2 instance store provides temporary block-level storage for an instance.
+- This storage is located on disks that are physically attached to the host computer.
+- This ties the lifecycle of the data to the lifecycle of the EC2 instance.
+- If you delete the instance, the instance store is deleted, as well.
+- Due to this, instance store is considered ephemeral storage. 
+- Read more about it in the [AWS documentation.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html)
+
+#### Amazon Elastic Block Storage (Amazon EBS)
+
+- Block-level storage device that you can attach to an Amazon EC2 instance.
+- These storage devices are called Amazon EBS volumes.
+- EBS volumes are essentially drives of a user-configured size attached to an EC2 instance, similar to how you might attach an external drive to your laptop.
+- EBS volumes act similarly to external drives in more than one way.
+  - Most Amazon EBS volumes can only be connected with one computer at a time. Most EBS volumes have a one-to-one relationship with EC2 instances, so they cannot be shared by or attached to multiple instances at one time. (Recently, AWS announced the Amazon EBS multi-attach feature that enables volumes to be attached to multiple EC2 instances at one time. This feature is not available for all instance types, and all instances must be in the same Availability Zone. Read more about this scenario in the EBS documentation.)
+  - You can detach an EBS volume from one EC2 instance and attach it to another EC2 instance in the same Availability Zone, to access the data on it.
+  - The external drive is separate from the computer. That means, if an accident occurs and the computer goes down, you still have your data on your external drive. The same is true for EBS volumes.
+  - You’re limited to the size of the external drive, since it has a fixed limit to how scalable it can be. For example, you might have a 2-TB external drive, which means you can only have 2 TB of content on it. This relates to EBS as well, since a volume also has a max limitation of how much content you can store on it.
+
+#### Amazon EBS use cases
+
+- **Operating systems:** Boot/root volumes to store an operating system. The root device for an instance launched from an Amazon Machine Image (AMI) is typically an Amazon EBS volume. These are commonly referred to as EBS-backed AMIs.
+- **Databases:** A storage layer for databases running on Amazon EC2 that rely on transactional reads and writes.
+- **Enterprise applications:** Amazon EBS provides reliable block storage to run business-critical applications.
+Throughput-intensive applications: Applications that perform long, continuous reads and writes.
+
+#### Amazon EBS benefits
+
+- **High availability:** When you create an EBS volume, it is automatically replicated in its Availability Zone to prevent data loss from single points of failure.
+- **Data persistence**: The storage persists even when your instance doesn’t.
+- **Data encryption**: All EBS volumes support encryption.
+- **Flexibility:** EBS volumes support on-the-fly changes. You can modify volume type, volume size, and input/output operations per second (IOPS) capacity without stopping your instance.
+- **Backups**: Amazon EBS provides the ability to create backups of any EBS volume
+
+#### Amazon EBS snapshots - Backups
+
+- Errors happen. One error is not backing up data and then inevitably losing it. To prevent this from happening to you, always back up your data – even in AWS.
+- Since your EBS volumes consist of the data from your Amazon EC2 instance, you should make backups of these volumes, called snapshots.
+
+**Resources**
+
+- [External Site: AWS: Amazon Elastic Block Store (Amazon EBS)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
+- [External Site: AWS: Amazon EBS FAQs](https://aws.amazon.com/ebs/faqs/)
+
+### Object Storage with Simple Storage Service (S3)
+
+- Unlike Amazon Elastic Block Store (Amazon EBS), Amazon Simple Storage Service (Amazon S3) is a standalone storage solution that isn’t tied to compute.
+- It enables you to retrieve your data from anywhere on the web
+- Amazon S3 is an object storage service.
+- Object storage stores data in a flat structure, using unique identifiers to look up objects when requested.
+- An object is  a file combined with metadata.
+- You can store as many of these objects as you’d like.
+- In Amazon S3, you store your objects in containers called buckets.
+- You can’t upload any object, not even a single photo, to Amazon S3 without creating a bucket first.
+- When you create a bucket, you specify, at the very minimum, two details – the AWS Region you want the bucket to reside in and the bucket name.
+- Uses:
+  - **Backup and storage:** Amazon S3 is a natural place to back up files because it is highly redundant. As mentioned in the last unit, AWS stores your EBS snapshots in S3 to take advantage of its high availability.
+  - **Media hosting**: Because you can store unlimited objects, and each individual object can be up to 5 TBs, Amazon S3 is an ideal location to host video, photo, and music uploads.
+  - **Software delivery:** You can use Amazon S3 to host your software applications that customers can download.
+  - **Data lakes**: Amazon S3 is an optimal foundation for a data lake because of its virtually unlimited scalability. You can increase storage from gigabytes to petabytes of content, paying only for what you use.
+  - **Static websites**: You can configure your S3 bucket to host a static website of HTML, CSS, and client-side scripts.
+  - **Static content**: Because of the limitless scaling, the support for large files, and the fact that you access any object over the web at any time, Amazon S3 is the perfect place to store static content.
+
+**Resources**
+
+- [External link: Amazon S3](https://aws.amazon.com/s3/)
+- [External link: Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
+- [External link: Using Versioning in S3 Buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html)
+
+### Choose the right storage service
+
+#### Amazon EC2 instance store
+
+- Instance store is ephemeral block storage.
+- This is preconfigured storage that exists on the same physical server that hosts the EC2 instance and cannot be detached from Amazon EC2.
+- You can think of it as a built-in drive for your EC2 instance.
+- Instance store is generally well-suited for temporary storage of information that is constantly changing, such as buffers, caches, and scratch data.
+- It is not meant for data that is persistent or long-lasting.
+- If you need persistent long-term block storage that can be detached from Amazon EC2 and provide you more management flexibility, such as increasing volume size or creating snapshots, then you should use Amazon EBS.
+
+#### Amazon EBS
+
+- Amazon EBS is meant for data that changes frequently and needs to persist through instance stops, terminations, or hardware failures.
+- Amazon EBS has two types of volumes – SSD-backed volumes and HDD-backed volumes.
+- SSD-backed volumes have the following characteristics:
+  - Performance depends on IOPS (input/output operations per second).
+  - Ideal for transactional workloads, such as databases and boot volumes.
+- HDD-backed volumes have the following characteristics:
+  - Performance depends on MB/s.
+  - Ideal for throughput-intensive workloads, such as big data, data warehouses, log processing, and sequential data I/O.
+- Here are a few important features of Amazon EBS that you need to know when comparing it to other services.
+  - It is block storage.
+  - You pay for what you provision (you have to provision storage in advance).
+  - EBS volumes are replicated across multiple servers in a single Availability Zone.
+  - Most EBS volumes can only be attached to a single EC2 instance at a time.
+
+#### Amazon S3
+
+- If your data doesn’t change that often, Amazon S3 might be a cost-effective and scalable storage solution for you.
+- Amazon S3 is ideal for storing static web content and media, backups and archiving, and data for analytics.
+- It can also host entire static websites with custom domain names.
+- Here are a few important features of Amazon S3 to know about when comparing it to other services:
+  - It is object storage.
+  - You pay for what you use (you don’t have to provision storage in advance).
+  - Amazon S3 replicates your objects across multiple Availability Zones in a Region.
+  - Amazon S3 is not storage attached to compute.
+
+#### Amazon Elastic File System (Amazon EFS) and Amazon FSx
+
+- For file storage that can mount on to multiple EC2 instances, you can use Amazon Elastic File System (Amazon EFS) or Amazon FSx.
+- Here are a few important features of Amazon EFS and Amazon FSx to know about when comparing them to other services:
+  - It is file storage.
+  - You pay for what you use (you don’t have to provision storage in advance).
+  - Amazon EFS and Amazon FSx can be mounted onto multiple EC2 instances.
+
+**Resources**
+
+- [External Site: AWS: Storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html)
+- [External Site: AWS: Cloud Storage on AWS](https://aws.amazon.com/products/storage/)
+- [Amazon EFS: How It Works](https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html)
+- [Amazon FSx for Windows File Server](https://aws.amazon.com/fsx/windows/)
+- [Amazon FSx for Lustre:](https://aws.amazon.com/fsx/lustre/)
+
+## Module
+
