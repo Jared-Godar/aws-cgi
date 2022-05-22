@@ -532,5 +532,211 @@ Throughput-intensive applications: Applications that perform long, continuous re
 - [Amazon FSx for Windows File Server](https://aws.amazon.com/fsx/windows/)
 - [Amazon FSx for Lustre:](https://aws.amazon.com/fsx/lustre/)
 
-## Module
+## Module 5: Databases
+
+### Relational databases
+
+- A relational database organizes data into tables.
+- Data in one table can be linked to data in other tables to create relationships – hence, the relational part of the name.
+- A table stores data in rows and columns.
+- A row, often called a record, contains all information about a specific entry.
+- Columns describe attributes of an entry. Here’s an example of three tables in a relational database.
+
+### Relational database management system
+
+- A relational database management system (RDBMS) lets you create, update, and administer a relational database.
+- Here are some common examples of relational database management systems:
+  - MySQL
+  - PostgresQL
+  - Oracle
+  - SQL server
+  - Amazon Aurora
+
+### Relational database benefits
+
+- **Joins**: You can join tables, enabling you to better understand relationships between your data.
+Reduced redundancy: You can store data in one table and reference it from other tables instead of saving the same data in different places.
+- **Familiarity**: Relational databases have been a popular choice since the 1970s. Due to this popularity, technical professionals often have familiarity and experience with this type of database.
+- **Accuracy**: Relational databases ensure that your data is persisted with high integrity and adheres to the atomicity, consistency, isolation, durability (ACID) principle.
+
+### Relational database use cases
+
+- Much of the world runs on relational databases. In fact, they’re at the core of many mission-critical applications, some of which you might use in your day-to-day life. 
+- Here are some common use cases for relational databases.
+  - Applications that have a solid schema that doesn’t change often, such as lift-and-shift applications that lift an app from on-premises and shifts it to the cloud, with little or no modifications.
+  - Applications that need persistent storage that follow the ACID principle, such as:
+    - Enterprise resource planning (ERP) applications
+    - Customer relationship management (CRM) applications
+    - Commerce and financial applications
+
+**Resources** 
+
+- [External Site: AWS: What Is a Relational Database?](https://aws.amazon.com/relational-database/)
+- [External Site: AWS: Databases on AWS](https://aws.amazon.com/products/databases/)
+
+### Amazon Relational Database Service (RDS)
+
+- Lets customers create and manage relational databases in the cloud without the operational burden of traditional database management.
+- Amazon RDS offloads some of the unrelated work of creating and managing a database.
+- You can focus on the tasks that differentiate your application, instead of focusing on infrastructure-related tasks
+- Amazon RDS supports most of the popular relational database management systems, ranging from commercial options, open source options, and even an AWS-specific option. The supported Amazon RDS engines are:
+- **Commercial**: Oracle, SQL Server
+- **Open Source**: MySQL, PostgreSQL, MariaDB
+- **Cloud Native**: Amazon Aurora
+
+**Resources**
+
+- [External Site: AWS: Working with Backups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html)
+- [External Site: AWS: Amazon RDS Backup and Restore](https://aws.amazon.com/rds/details/backup/)
+- [External Site: AWS: Creating and Using an IAM Policy for IAM Database Access](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html)
+- [External Site: AWS: Amazon Virtual Private Cloud VPCs and Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html)
+
+### Amazon DynamoDB
+
+- Non-relational
+- Flexible schemas
+- Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability.
+- Lets you offload the administrative burdens of operating and scaling a distributed database so that you don't have to worry about hardware provisioning, setup and configuration, replication, software patching, or cluster scaling.
+- Stand-alone tables
+  - Items
+    - Attributes
+- With DynamoDB, you can create database tables that can store and retrieve any amount of data and serve any level of request traffic.
+- You can scale up or scale down your tables' throughput capacity without downtime or performance degradation.
+- You can use the AWS Management Console to monitor resource usage and performance metrics.
+- The following are the basic DynamoDB components:
+  - **Tables** – Similar to other database systems, DynamoDB stores data in tables. 
+    - A table is a collection of data. 
+  - **Items** – Each table contains zero or more items. 
+    - An item is a group of attributes that is uniquely identifiable among all the other items. 
+    - In a People table, each item represents a person. In a Cars table, each item represents one vehicle. Items in DynamoDB are similar in many ways to rows, records, or tuples in other database systems. In DynamoDB, there is no limit to the number of items you can store in a table.
+  - **Attributes** – Each item is composed of one or more attributes.
+    - An attribute is a fundamental data element, something that does not need to be broken down any further.
+    - For example, an item in a People table might contain attributes called PersonID, LastName, FirstName, and so on.
+
+**Resources**
+
+
+- [External Resource: Introduction to Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+
+### Choose the right Database Service
+
+![service](dbService.png)
+
+**Resources**
+
+- [External Site: AWS: Databases on AWS](https://aws.amazon.com/products/databases/)
+- [External Site: AWS: AWS Database Blog](https://aws.amazon.com/blogs/database/?nc=sn&loc=4)
+- [External Site: AWS: Database Freedom](https://aws.amazon.com/products/databases/freedom/?nc=sn&loc=5)
+
+## Module 6: Monotoring, Optimization, and serverless
+
+### Monitoring
+
+- When operating a website like the Employee Directory Application on AWS, you might have questions like:
+  - How many people are visiting my site day to day?
+  - How can I track the number of visitors over time?
+  - How will I know if the website is having performance or availability issues?
+  - What happens if my Amazon Elastic Compute Cloud (EC2) instance runs out of capacity?
+  - Will I be alerted if my website goes down?
+- Monitoring benefits:
+  - **Respond to operational issues proactively before your end users are aware of them**.
+  - **Improve the performance and reliability of your resources.**
+  - **Recognize security threats and events**. 
+    - When you monitor resources, events, and systems over time, you create what is called a baseline.
+    - A baseline defines what activity is normal.
+    - Using a baseline, you can spot anomalies like unusual traffic spikes or unusual IP addresses accessing your resources. 
+    - When an anomaly occurs, an alert can be sent out or an action can be taken to investigate the event.
+  - **Make data-driven decisions for your business**.
+- You can use CloudWatch to:
+  - Detect anomalous behavior in your environments
+  - Set alarms to alert you when something is not right
+  - Visualize logs and metrics with the AWS Management Console
+  - Take automated actions like scaling
+  - Troubleshoot issues
+  - Discover insights to keep your applications healthy
+
+**Resource**
+
+- [External Site: AWS: Amazon CloudWatch](https://aws.amazon.com/cloudwatch/)
+
+### Amazon CloudWatch
+
+- managed service that you can use for monitoring, without managing the underlying infrastructure
+- Many AWS services send metrics automatically for free to CloudWatch at a rate of one data point per metric per 5-minute interval.
+- This gives you visibility into your systems without any extra cost.
+- This is known as basic monitoring.
+- For many applications, basic monitoring is adequate.
+- Custom metrics, dashboards, logs, alarms
+
+**Resources**
+
+- [External Site: AWS: Getting Started with Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html)
+- [External Site: AWS: What Is Amazon CloudWatch Logs?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html)
+- [External Site: AWS Services That Publish CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html)
+- [External Site: AWS: View Available Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/viewing_metrics_with_cloudwatch.html)
+- [External Site: AWS: Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/)
+- [External Site: AWS: Amazon Simple Notification Service](https://aws.amazon.com/sns/)
+- [External Site: AWS: EC2 Auto Scaling Actions](https://aws.amazon.com/ec2/autoscaling/)
+
+### Solution Optimization
+
+#### Availability
+
+- The availability of a system is typically expressed as a percentage of uptime in a given year or as a number of nines. 
+
+![Availability](availability.png)
+
+**Resources**
+
+- [External Site: High Availability and Scalability on AWS](https://docs.aws.amazon.com/whitepapers/latest/real-time-communication-on-aws/high-availability-and-scalability-on-aws.html)
+- [External Site: AWS: AWS Reliability Pillar: AWS Well-Architected Framework](https://d1.awsstatic.com/whitepapers/architecture/AWS-Reliability-Pillar.pdf)
+
+### Traffic routing with lastic Load Balancing (ELB)
+
+- Load balancing refers to the process of distributing tasks across a set of resources.
+- AWS provides a service for you called Elastic Load Balancing.
+- The ELB service provides a major advantage over using your own solution to do load balancing – mainly, you don’t need to manage or operate it. It can distribute incoming application traffic across EC2 instances, containers, IP addresses, and AWS Lambda functions.
+- Other key features include the following:
+  - Because ELB can load balance to IP addresses, it can work in a hybrid mode, which mean it also load balances to on-premises servers.
+  - ELB is highly available. The only option you must ensure is that the load balancer is deployed across multiple Availability Zones.
+  - In terms of scalability, ELB automatically scales to meet the demand of the incoming traffic. It handles the incoming traffic and sends it to your backend application.
+- Application Load Balancer:
+  - **ALB routes traffic based on request data**. 
+  - **ALB sends responses directly to the client**.
+  - **ALB uses TLS offloading**.
+  - **ALB authenticates users.**
+  - **ALB secures traffic.**
+  - **ALB uses the round-robin routing algorithm**
+  - **ALB uses the least outstanding request routing algorithm**
+  - **ALB uses sticky sessions**
+- Network load balancer
+  
+![balancers](balancers.png)
+
+**Resources**
+
+- [External Site: AWS: Elastic Load Balancer Product Comparison](https://aws.amazon.com/elasticloadbalancing/features/#Product_comparisons)
+- [External Site: AWS: AWS Certificate Manager](https://aws.amazon.com/certificate-manager/)
+- [External Site: AWS: Authenticate Users Using an Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html)
+- [External Site: AWS: How AWS WAF Works](https://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works.html)
+- [External Site: AWS: Introducing AWS Gateway Load Balancer ](https://aws.amazon.com/blogs/aws/introducing-aws-gateway-load-balancer-easy-deployment-scalability-and-high-availability-for-partner-appliances/)
+
+### EC2 Auto-Scaling
+
+#### Capacity issues
+
+- Availability and reachability is improved by adding one more server.
+- However, the entire system can again become unavailable if there is a capacity issue.
+- This section looks at load issue for both types of systems discussed – active-passive and active-active.
+- Vertical and Horizontal scaling
+- Autoscaling
+
+**Resources**
+
+- [External Site: AWS: Amazon EC2 Auto Scaling](https://aws.amazon.com/ec2/autoscaling/)
+- [External Site: AWS: Amazon EC2 Auto Scaling FAQs](https://aws.amazon.com/ec2/autoscaling/faqs/)
+- [External Site: AWS: Setting Capacity Limits for Your Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html)
+- [External Site: AWS: Step and Simple Scaling Policies for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html)
+- [External Site: AWS: Target Tracking Scaling Policies for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html)
+- [External Site: AWS: Creating an Auto Scaling Group Using a Launch Template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html)
 
