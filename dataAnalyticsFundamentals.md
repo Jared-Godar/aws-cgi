@@ -544,3 +544,153 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 - Do you need massive parallel data processing?
 - How much customization will your data solution require?
 
+## Value
+
+- When you have **massive volumes** of **data** used to support a **few golden** insights, you may be missing the **value** of your data.
+- We have discussed data collection and the speed of collection, data storage, capacity, processing, and analytics.
+- All of these have one thing in common: they do not evaluate the data for usefulness.
+- Storing terabytes of data that no one will ever look at, analyze, or visualize is a futile effort.
+- The real effort should be placed in finding out what the value of that data actually is and then learning ways to extract that value from the terabytes of data your business has collected.
+
+> ""We believe **data is our oil**, our gold. But having hundreds of millions of terabytes of **data that isn't actionable** really does nothing for me." - Rob Roy, Chief Digital Officer at Sprint
+
+### What is data analytics?
+
+- Data in the absence of meaning is meaningless.
+- Words in a language you don't understand are equally meaningless.
+- It is only when meaning is supplied that the data or words can be understood.
+- Data analytics comes in two classifications:
+  - **Information Analytics**
+    - Process of analyzing information to find the value contained within it.
+    - It is a broad classification of data analytics that can cover topics from the financial accounting for a business to analyzing the number of entries and exits in a secured building.
+  - **Operational Analytics**
+    - quite similar to information analyticsHowever, it focuses on the digital operations of an organization.
+
+> “It is a capital mistake to theorize before one has data. Insensibly, one begins to twist the facts to suit theories, instead of theories to suit facts.” – Sherlock Holmes
+
+### Operational analytics
+
+- Businesses have thousands of systems, applications, and customers that are constantly generating data.
+- This is one of the fastest growing areas of data collection.
+- Operational analytics is a form of analytics that is used specifically to retrieve, analyze, and report on data for IT operations.
+- This data includes system logs, security logs, complex IT infrastructure events and processes, user transactions, and even security threats
+- Benefits
+  - Timely Action
+  - Immediate visibility
+  - Continuous insights
+
+![analysis](analysis.png)
+
+### Predictive analytics
+
+- AWS has Amazon ML and a set of services (including artificial intelligence [AI]) that make it easy for developers to apply predictive analytics to their data and add new, smart data-processing features to their applications.
+- Amazon has a long and rich tradition around machine learning (ML), and much of this accumulated technology has been packaged up for customer use with this service.
+- The machine learning stack has three key layers:
+  - **Application services** to enable developers to plug prebuilt AI functionality into their apps without having to worry about the ML models that power these services
+  - **Platform services** to make it easy for any developer to get started and get deep with ML
+  - **Frameworks and interfaces** for ML practitioners
+In the following architecture, you see an example for using Amazon ML to produce real-time predictions to users of an application. In this architecture, there are several services working together to produce the predictions.
+
+### Cognitive analytics
+
+- Cognitive analytics is the newest form of data analytics.
+- It is providing an incredible opportunity to provide highly specialized recommendations to businesses without any human involvement, past the initial configuration and training of the ML models.
+- Some real world examples of cognitive analytics include:
+  - Financial software providing accurate, real-time, fact-based investment recommendations
+  - Healthcare software giving customers access to reliable recommendations on treatments and up-to-date healthcare options
+  - Veterinary software helping veterinarians to quickly and accurately diagnose their patients
+  - Software aiding fantasy football leagues and enthusiasts to manage their teams
+
+### Analytic services and velocity
+
+- The first time you push data through a data analytics system, the data will flow from ingestion into a staging storage location.
+- Data will then be processed from the staging location and may result in the data being placed in an analytical data store.
+- Processing of the data from the staging location may be repeated many times to produce many different analytical results.
+- It is important to have a solid understanding of the speed you can expect from the different processing types.
+
+### Batch analytics
+
+- Typically involves querying large amounts of “cold” data.
+- Batch analytics are implemented on large data sets to produce a large number of analytical results on a regular schedule.
+- MapReduce-based systems, such as Amazon EMR, are examples of platforms that support batch analytics.
+- High-level frameworks that run on Apache Hadoop can streamline and significantly speed up your batch analytics.
+- The framework you should use depends heavily on the type of workload you have.
+- Some of the most popular frameworks used with Hadoop are Hive, Flink, Tez, HBase, Presto, Pig, and Spark.
+- Each of these frameworks can be installed on Amazon EMR clusters.
+
+### Interactive analytics
+
+- Typically involves running complex queries across complex data sets at high speeds.
+- This type of analytics is interactive in that it allows a user to query and see results right away.
+- Batch analytics are generally run in the background, providing analytics in the form of scheduled report deliveries.
+- For interactive analysis, **Amazon Athena** makes it easy to analyze data directly in Amazon S3 and Amazon S3 Glacier using standard SQL queries.
+- Athena is serverless, so there is no infrastructure to set up or manage.
+- You can start querying data instantly, get results in seconds, and pay only for the queries you run.
+- Simply point to your data in Amazon S3, define the schema, and start querying using standard SQL.
+- **Amazon ES** allows you to search, explore, filter, aggregate, and visualize your data in near-real time.
+  - The service has easy-to-use APIs and real-time analytics capabilities alongside the availability, scalability, and security that production workloads require.
+- **Amazon Redshift** provides the ability to run complex, analytic queries against petabytes of structured data and includes Redshift Spectrum, which runs SQL queries directly against exabytes of structured or unstructured data in Amazon S3 without the need for unnecessary data movement.
+
+### Stream analytics
+
+- Requires ingesting a sequence of data and incrementally updating metrics, reports, and summary statistics in response to each arriving data record. This method is best suited for real-time monitoring and response functions.
+- Streaming data processing requires two layers:
+  - **Storage layer**
+    - Nneeds to support record ordering and strong consistency to enable fast, inexpensive, and
+re-playable reads and writes of large streams of data
+  - **Processing layer** 
+    - Responsible for consuming data from the storage layer, running computations on that data, and then notifying the storage layer to delete data that is no longer needed
+- Many platforms have emerged that provide the infrastructure needed to build streaming data applications including Amazon Kinesis, Apache Kafka, Apache Flume, Apache Spark Streaming, and Apache Storm.
+- **Amazon Kinesis** is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming data and enables you to build custom streaming data applications for specialized needs.
+  - Kinesis offers two services: Amazon Kinesis Data Firehose and Amazon Kinesis Data Streams.
+- If the data in your stream needs format conversion, transformation, enrichment, or filtering, you can preprocess the data using an **AWS Lambda** function.
+  - You can do this before your application SQL code executes or before your application creates a schema from your data stream.
+- You can install streaming data platforms of your choice on the Amazon Elastic Compute Cloud (Amazon EC2) and Amazon EMR and build your own stream storage and processing layers.
+- By building your streaming data solution on Amazon EC2 and Amazon EMR, you can avoid the friction of infrastructure provisioning and gain access to a variety of stream storage and processing frameworks.
+- Options for the streaming data storage layer include Apache Kafka and Apache Flume.
+- Options for the stream processing layer include Apache Spark Streaming and Apache Storm.
+
+## Data Visualization
+
+> "Data analysis isn't really about data and charts. It's about finding and telling a story." -Glen Rabbie, CEO Yellowfin
+
+### Data preparation
+
+- **Inspecting data** - This first phase is generally part of the planning involved in creating an ETL operation.
+- **Cleansing data** - This is the process of normalizing the data within the ETL operation to ensure that the fields contain the correct values and to deal with the issue of missing values.
+- **Transforming data** - This phase involves applying functions to manipulate data into new forms for analytic purposes.
+- **Visualizing data** - This is the process of building out reports and dashboards to present the value within the data.
+
+### What's in a report?
+
+- Analytical reporting comes in many different shapes and sizes.
+- The source of the data rarely has any impact on the resulting reports.
+- The reports are organized to meet the needs of the consumers of the reports.
+- There are three broad types of reports:
+  - **Static reports** have not died out in this digital age.
+    - Still hugely popular for presentations and meetings.
+    - The are found in the form of PDFs and PowerPoint slides and can often be accessed through web portals and software interfaces.
+  - **Interactive reports** are becoming more common all the time.
+    - These types of reports generally fall under the heading of self-service business intelligence.
+    - These reports often take on a print-based report style but have the advantage that consumers can apply filters to charts and graphs, change the scales, and even group and sort values within the reports.
+    - This allows a consumer to tell their own story using the foundation laid by the report builder.
+  - **Dashboards** are another very popular reporting tool.
+    - Whether dashboards are interactive depends on the software used.
+    - Consumers find the greatest benefit in dashboards when they focus on high-level roll-ups of key business factors.
+- Reports and dashboards are made up of multiple charts, tables, and graphs to answer questions.
+- The clearer the questions are, the better the report or dashboard will be at providing answers.
+- Reports and dashboards can also be broken up into pages or views.
+  - These pages should have a single theme for all of the report elements within them.
+  - It is very common to provide consumers of interactive reports and dashboards with filters that can be applied to either the whole page or to individual elements within the page.
+
+### Best practices for writing reports
+
+- Building a solid report that will provide consumers with what they need to make critical decisions is a bit of an art form.
+- There are a few steps to be successful:
+  - Gather the data, facts, action items, and conclusions.
+  - Identify the audience, expectations they have, and the proper method of delivery.
+  - Identify the visualization styles and report style that will best fit the needs of the audience.
+  - Create the reports and dashboards.
+
+
+## Key Takeaways
