@@ -394,3 +394,153 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 
 ![compare](comparedb.png)
 
+---
+
+## Veracity
+
+- When you have data that is **ungoverned**, coming from numerous, **dissimilar systems** and cannot curate the data in meaningful ways, you know you have a **veracity** problem.
+- **Curation** is the action or process of selecting, organizing, and looking after the items in a collection.
+- **Data integrity** is the maintenance and assurance of the accuracy and consistency of data over its entire lifecycle.
+- **Data veracity** is the degree to which data is accurate, precise, and trusted.
+
+### The problem of veracity
+
+- Data changes over time.
+- As it is transferred from one process to another, and through one system and another, there are opportunities for the integrity of the data to be negatively impacted.
+- You must ensure that you maintain a high level of certainty that the data you are analyzing is trustworthy.
+- Data veracity is contingent on the integrity of the data.
+
+### What is data integrity?
+
+- As the name reads, data integrity is all about making sure your data is trustworthy.
+- Does it have integrity?
+- Was the entire data chain secure and uncompromised?
+- Understanding the full lifecycle of your data and knowing how to protect it effectively will greatly strengthen the integrity of your data.
+
+![lifecycle](lifecycle2.png)
+
+- **Data cleansing** is the process of detecting and correcting corruptions within data.
+- **Referential integrity** is the process of ensuring that the constraints of table relationships are enforced.
+- **Domain integrity** is the process of ensuring that the data being entered into a field matches the data type defined for that field
+- **Entity integrity** is the process of ensuring that the values stored within a field match the constraints defined for that field.
+
+### Identifying data integrity issues
+
+- As a data analyst, you may be called upon to perform data integrity checks.
+- During this process, you will be looking for potential sources of data integrity problems.
+- Data can come from both internal and external sources.
+- It is highly unlikely that you will be able to have influence on data generated outside of your business.
+- However, within your business, you may have the ability to make recommendations on improvements for the data sources you will be interacting with.
+- When changing the way the source systems are ingesting data is not an option, it is often the responsibility of the data analyst to determine the integrity of the data source in question and make adjustments to account for any area where that source may be lacking integrity.
+
+### Understanding Data Concistency
+
+- To maintain veracity in stored data, consistency is key.
+- When data is stored as files, consistency is controlled by the application that is developing the files.
+- When data is stored in a database, consistency is the responsibility of the database that is housing the data.
+- In this topic, we will discuss the two methods that databases implement: **ACID** and **BASE**.
+
+### ACID
+
+- **Atomicity**
+  - When executing a transaction in a database, atomicity ensures that your transactions either completely succeed or completely fail
+  - No one statement can succeed without the others.
+  - Because many requests to a database are multi-faceted, this interaction is very important for avoiding faults in your data set
+  - When atomicity fails, the results can be devastating.
+  - Imagine an operation that is set to copy all orders from a temporary table into a permanent table every 10 minutes.
+  - If a single record within that transaction fails, everything following it will also fail.
+- **Consistency**
+  - Consistency ensures that all transactions provide valid data to the database.
+  - This data must adhere to all defined rules and constraints.
+  - For a transaction to complete successfully, all of the statements within it must be valid against all relevant constraints set in the database.
+  - If any single statement violates these checks, the whole transaction will be rolled back, and the database will be returned to its previous state.
+  - Consistency also ensures that data updates are not made available until all replicates have been updated as well.
+- **Isolation**
+  - Isolation ensures that one transaction cannot interfere with another concurrent transaction.
+  - Databases are busy places.
+  - Isolation ensures that when multiple transactions request the same data, there are rules in place ensuring that the operations will not cause data corruption and that all data will be made available in an orderly fashion.
+- **Durability**
+  - Data durability is all about making sure your changes actually stick.
+  - Once a transaction has successfully completed, durability ensures that the result of the transaction is permanent even in the event of a system failure.
+  - This means that all completed transactions that result in a new record or update to an existing record will be written to disk and not left in memory.
+- It is a method for maintaining consistency and integrity in a structured database.
+- All four of these properties work together to enforce integrity in a relational database.
+- Many regulations require businesses to implement ACID-compliant databases.
+- However, in a world where unstructured data, non-relational data, and distributed systems are taking up ever increasing percentages of a business’ data consumption, another option is necessary.
+
+### ACID compliance
+
+- ACID is the long-standing bastion of relational data integrity.
+- In a database such as Amazon RDS, a sequence of statements executed together is called a transaction. Millions of transactions can be performed consecutively.
+- The data and the constraints on that data are very active in relational databases.
+- The goal of an ACID-compliant database is to return the most recent version of all data and ensure that data entered into the system meets all rules and constraints that are assigned at all times.
+
+### BASE
+
+- Basically Available
+  - BA allows for one instance to receive a change request and make that change available immediately.
+  - The system will always guarantee a response for every request.
+  - However, it is possible that the response may be a failure or stale data, if the change has not been replicated to all nodes.
+  - In an ACID system, the change would not become available until all instances were consistent.
+  - Consistency in a BASE model is traded for availability.
+- Soft state
+  - In a BASE system, there are allowances for partial consistency across distributed instances.
+  - For this reason, BASE systems are considered to be in a soft state, also known as a changeable state.
+  - In an ACID system, the database is considered to be in a hard state because users cannot access data that is not fully consistent.
+- Eventually consistent
+  - This reinforces the other letters in the acronym.
+  - The data will be eventually consistent.
+  - In other words, a change will eventually be made to every copy.
+  - However, the data will be available in whatever state it is during propagation of the change.
+- It is a method for maintaining consistency and integrity in a structured or semistructured database.
+
+![acidbase](acidbase.png)
+
+### BASE compliance
+
+- BASE supports data integrity in non-relational databases, which are sometimes called NoSQL databases.
+- Non-relational databases like Amazon DynamoDB still use transactions for processing requests.
+- These databases are hyperactive, and the primary concern is availability of the data over consistency of the data. To ensure the data is highly available, changes to data are made available immediately on the instance where the change was made.
+- However, it may take time for that change to be replicated across the fleet of instances.
+- The aim is that the change will eventually be fully consistent across the fleet.
+
+### ETL Process
+
+- Source data is messy, in a thousand locations, and rarely developed with the same style of organization.
+- Trying to make sense of this mess without transforming the source data is like trying to clearly hear a single voice in a crowd.
+- You may catch parts of the conversation, but it will loose context and validity quickly.
+
+### Understanding ETL
+
+- ETL—Extract, Transform, Load—is the process of collecting data from raw data sources and transforming that data into a common type.
+- This new data is loaded into a final location to be available for analytical analysis and inspection.
+- In modern cloud-based environments, we often refer to this process as ELT (Extract, Load, Transform) instead
+- The steps are simply performed in a different order, but the result is the same.
+
+![etl](etl.png)
+
+### Transforming your data – comparing Amazon EMR and AWS Glue
+
+- When it comes to performing the data transformation component of ETL, there are two options within AWS:
+  - Amazon EMR and 
+  - AWS Glue.
+
+#### Amazon EMR
+
+- More hands-on approach to creating your data pipeline.
+- This service provides a robust data collection and processing platform.
+- Using this service requires you to have strong technical knowledge and know-how on your team.
+- The upside of this is that you can create a more customized pipeline to fit your business needs.
+- dditionally, your infrastructure costs may be lower than running the same workload on AWS Glue.
+
+#### AWS Glue
+
+- Serverless, managed ETL tool that provides a much more streamlined experience than Amazon EMR.
+- This makes the service great for simple ETL tasks, but you will not have as much flexibility as with Amazon EMR.
+- You can also use AWS Glue as a metastore for your final transformed data by using the AWS Glue Data Catalog. This catalog is a drop-in replacement for a Hive metastore.
+
+- When making your decision about which of these tools to work with, decide with the end in mind.
+- Are you going to want a continuous data pipeline that requires very little overhead?
+- Do you need massive parallel data processing?
+- How much customization will your data solution require?
+
