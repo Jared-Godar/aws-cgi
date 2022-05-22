@@ -692,5 +692,67 @@ re-playable reads and writes of large streams of data
   - Identify the visualization styles and report style that will best fit the needs of the audience.
   - Create the reports and dashboards.
 
-
 ## Key Takeaways
+
+![putItTogether](together.png)
+
+### Data platform engineer
+
+- The cloud data platform engineer is often viewed as the DBA 2.0.
+- The individual filling this role is a leader in the cloud data team.
+- Their responsibilities are to orchestrate the successful implementation of cloud technologies within the data infrastructure of their business.
+- They must have a solid understanding of the impact database types and implementation will have on the way data is used across the business platform.
+- They are responsible for purchasing decisions for cloud services and approval of data architectures, data migration strategies, and storage and retention strategies.
+- **Important skills**
+  - Understand AWS network architecture services
+  - Understand the services and features of the AWS data platform: relational, non-relational, graph, and object storage
+  - Understand migration strategies
+  - Understand storage and retention strategies
+
+### Data pipeline engineer
+
+- The cloud data pipeline engineer role is responsible for planning, architecting, and building
+large-scale data processing systems.
+- They are an expert in AWS data platform services including databases, ETL, analytics, and reporting.
+- Their responsibilities are to orchestrate the successful implementation of data movement, transformation, analytics, and reporting solutions with the AWS cloud.
+- Important skills
+  - Understand the services and features of the AWS data platform: relational, non-relational, graph, and object storage
+  - Understand data processing and analytics services: Amazon EMR and AWS Glue
+  - Understand data analytics techniques and AWS services: Amazon Kinesis, Amazon EMR, and AWS Glue
+Understand business intelligence reporting: Amazon QuickSight
+
+### Data architect
+
+- The cloud data architect role is a cloud-native role.
+- In on-premises environments, these responsibilities often fell upon server or network administrators.
+- Cloud data architects are the team members who understand all aspects of a data platform's architecture.
+- They work closely with the data platform engineers and data pipeline engineers to create data workflows that achieve their company’s goals.
+- They’re responsible for designing and testing new database architectures and planning both data and architecture migrations.
+- Important skills
+  - Understand AWS network architecture services
+  - Understand the services and features of the AWS data platform: relational, non-relational, graph, and object storage
+  - Understand service integration and maintenance
+  - Understand data access patterns
+
+### Data analyst
+
+- These problem-solvers spend their days analyzing data systems, creating automated systems for retrieving data from the data platform, and compiling analytical data sets.
+- Though they work closely with other members of their team, data analysts should also be comfortable taking the reins and working independently.
+- Cloud data analysts are more commonly members of the business user population.
+- They have a keen understanding of the business processes and the data access patterns of their department.
+- These individuals spend a significant portion of their time building reports and dashboards for their team members to use.
+- Important skills
+  - Understand database technologies: relational, non-relational, and graph
+  - Understand data analytics techniques and AWS services: Amazon Kinesis, Amazon EMR, and AWS Glue
+  - Understand business intelligence reporting: Amazon QuickSight
+
+### Data scientist
+
+- These problem-solvers spend their days analyzing and interpreting complex digital data, such as the usage statistics of a website.
+- Though they work closely with other members of their team, data scientists should also be comfortable taking the reins and working independently.
+- Data scientists work with new technologies such as machine learning and AI to deepen the business' understanding of the data within the data platform and gain new insights into both operational and business analytics.
+- **Important skills**
+  - Understand database technologies: relational, non-relational, and graph
+  - Understand data analytics techniques and AWS services: Amazon Kinesis, Amazon EMR, and AWS Glue
+  - Understand advanced analytics: machine learning, AI
+  
