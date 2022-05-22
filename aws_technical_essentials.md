@@ -122,3 +122,81 @@
 
 [External Site: AWS: Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/)
 
+## Protecting AWS Root User
+
+- Unrestricted access to everything
+- MFA recommended for root user
+
+### Authentication
+
+- When you create your AWS account, you use the combination of an email address and a password to verify your identity.
+- Authentication ensures that the user is who they say they are.
+- User names and passwords are the most common types of authentication
+- Token-based authentication
+- Biometric data, like a fingerprint.
+- Authentication simply answers the question, “Are you who you say you are?”
+
+### Authorization
+
+- Authorization is the process of giving users permission to access AWS resources and services.
+- Authorization determines whether a user can perform certain actions
+  - Read
+  - Edit
+  - Delete
+  - Create resources.
+- Authorization answers the question, “What actions can you perform?”
+
+**Resources** 
+
+- [External Site: AWS: Enabling a Hardware MFA Device (Console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_physical.html)
+- [External Site: AWS: Enabling a U2F Security Key (Console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_u2f.html)
+- [External Site: AWS: Enabling a Virtual Multi-Factor Authentication (MFA) Device (Console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html)
+- [External Site: AWS: Table of Supported MFA Devices](https://aws.amazon.com/iam/features/mfa/)
+
+## Identity and access management (IAM)
+
+- AWS service that helps you manage access to your AWS account and resources
+- Provides a centralized view of who and what are allowed inside your AWS account (authentication)Who and what have permissions to use and work with your AWS resources (authorization)
+- Provide granular access to those working in your account
+- IAM is global and not specific to any one Region.
+- IAM is integrated with many AWS services by default.
+- You can establish password policies in IAM to specify complexity requirements and mandatory rotation periods for users.
+- IAM supports MFA.
+- IAM supports identity federation, which allows users who already have passwords elsewhere – for example, in your corporate network or with an internet identity provider – to get temporary access to your AWS account.
+Any AWS customer can use IAM; the service is offered at no additional charge.
+- Users, groups, policies
+
+**Resources**
+
+- [External Site: What Is IAM?](https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/introduction.html)
+- [External Site: AWS IAM Identities](https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/id.html)
+- [External Site: Access Management with AWS IAM](https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/access.html)
+
+## Role-based access
+
+- Loack down AWS root
+- Follow principle of least privilege
+- Use IAM appropriately
+- Use IAM roles when possible - maintaining role is more efficient than maintaining users
+- Consider using an identity provider (IdP) - for users with multiple roles in multiple dbs
+- Consider AWS single sign on - many employees and multiple AWS accounts
+
+**Resources**
+
+- [External Site: AWS: Security Best Practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [External Site: AWS: How to Create and Manage Users within AWS Single Sign-On](https://aws.amazon.com/blogs/security/how-to-create-and-manage-users-within-aws-sso/)
+
+## AWS IAM Demo
+
+- Configure 3 users with unique permissions
+
+## Employee Directory Application Hosting
+
+- Host on Amazon EC2
+- Management console
+- EC2 - compute service for virtual machines
+- Create an instance - single virtual machine
+- Configure instance details
+
+## Module II: AWS Compute
+
