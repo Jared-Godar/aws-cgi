@@ -41,3 +41,18 @@
 - [ ] Command prompt in the directory with file
 - [ ] Paste coppied **ssh comand** within CMD, execute it, and answer 'yes' to fingerprint
 - [ ] 
+
+---
+
+Extra credit
+
+1. Determine the yearly cost for your instance based on all available pricing models
+   1. Assumptions - Instance is 50% busy, Egress – 1 TB/month
+   2. Build a matrix with all options
+   3. Perform a cost-benefit analysis
+   4. How do the numbers change when you factor in a 3-node HA cluster with a Load Balancer?
+   5. What impact does 90/hour personnel cost factor into the total cost? – Assume an hour/day for EC2 upkeep costs
+2. Which pricing model would you recommend?
+   1. Original configuration
+   2. HA configuration
+   3. Investigate the pricing changes for other instance types – i.e., m5.xlarge

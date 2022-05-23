@@ -233,7 +233,7 @@
   - `SPOT` - discounted, but can be removed with limited notice, need rules
   - `RESERVED` - paid for up front, 1/3 years, most cost-effective that you can count on, paid whether you use or not
   - `ON-DEMAND` - most expensive
-  -` SAVINGS PLANS`
+  -`SAVINGS PLANS`
 - Hibernating / stopping instance may or may not impact the bill, depending on pricing model used
 - Storage via `BLOCK DEVICES` - `INSTANCE STORE`(ephemeral), `EBS VOLUMES`(permanence)
 - Instance Store
@@ -246,3 +246,24 @@
 - EFS (Elastic File System)
 
 ---
+
+## Lunch / EC2 Exercise
+
+---
+
+## Virtual Private Cloud (VPC)
+
+- Service that facilitates resource isolation in a shared tenant configuration
+- VPCs require *Classless Interdomain Routing* **CIDR** IPv4 addresses
+- Netmasks are usually between /28 to /16
+- [More information: RFC 1918 Address Allocation for Private Internets FAQs](http://www.faqs.org/rfcs/rfc1918.html)
+- VPC goes across **all** AZs within a REGION
+- Subnets are specific IP address ranges within a VPC & a specific AZ
+  - Helps in traffic isolation to provisioned resources
+
+> *From here on, I will primarily hand-annotate the notes PDF and put high points here instead of maintaining both in parallel*
+
+- [Resource for For Subnet Address Segmentation:](https://network00.com/NetworkTools/IPv4AddressPlanner/)
+
+## Identity & Access Management (IAM)
+
