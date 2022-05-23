@@ -99,3 +99,100 @@
   - PII
 - Restricted
   - UA - Criminal
+
+## Structured vs Unstructured
+
+- Outdated way of thinking
+- Relational vs non-relational
+- Even if Relational, doean't mean RDB is where it belongs
+  - Could be S3
+  - noSQL Key-Value pair
+- Find right persistence layer for right data
+- Data engineering is the foundation of data science
+- Without high-quality data, it doesnt work
+
+## Integration Hub
+
+- *E pluribus unum*
+- Single source of truth
+- Integrates all data
+- Continuously applies rules
+  - Cleaning
+  - Compliance
+- Maintains object versions and track dependencies
+  - Raise
+  - Relocation
+- Supports data lineage and cataloging
+- Why?
+  - Customer c
+
+## Data Integration Hyb - Processing Pillars
+
+1. **Ingestion**
+   1. Rudimentary datatype checks
+   2. Pre-processing
+   3. Separation of BATCH vs REAL-TIME
+2. **Persistence**
+   1. Stored internally in RAWDB (like a Data Lake)
+   2. Maintains versions - lineage, auditing and tracing for regulatory requirements
+3. **Transformation**
+   1. Rules aplies - Data quality, reg
+   2. RAWDB -> CLEANB / ERRORDB
+   3. Maintains Versions
+4. Analytics/ML/AI
+   1. Fed from CLEANDB
+   2. Generates KPIs -> INSIGHTDB
+   3. Maintains Versions
+
+## Serverless Data Integration on AWS
+
+![serverless](serverless.png)
+
+1. Ingestion
+   1. Kinesis (real-time)
+   2. S3 (micro-batch)
+   3. Athena (pre-processing / data lake)
+2. Persistence
+   1. DynamoDB (Lab Thursday)
+   2. Aurora - relational service. Amazon version of mySQL/Postgress for cloud (Friday)
+   3. Redshift - analytics, large data at scale | Snowflake is an alternative, also serverless
+3. Transformation - where the magic happens
+   1. Lambda
+   2. Step functions - Coordinating layer for Lambdas
+4. Analytics/ML/AI
+   1. Athena - Data Lake Analytics - Datalake SQL with external layers
+   2. QuickSight - Visualization, dashboards, graphs - not as rich as Lookr or Tableau
+   3. SageMaker - ML Models
+   4. Fargate - ML Algorithms
+
+---
+
+## Cloud Computing
+
+> Providers, Characteristics, AWS Configurations
+
+### Cloud Service Providers
+
+- Microsoft Azure
+- IBM
+- AWS
+- Oracle Cloud
+- Google Cloud
+- Alibaba Cloud
+
+### Key Characteristics
+
+1. Web-portal for renting compute resources
+2. Pay-as-you-go or pay-per-usage
+3. Virtual for you <--> Physical for CSPs
+4. Quick [De-]Provisioning
+5. Elastic Scale Up or Down(compute resources / storage), in or out (more servers / nodes)
+6. Can be fault-resilient, if designed so
+
+### AWS Cloud Configuration
+
+- 21 geographic **`REGIONS`**
+- Each **`REGION`** has two or more **`AVAILABILITY ZONES (AZ)`**
+- **`AZ`** independent data center with its own resources
+- `Highly Available` configration requires 2 or more AZs
+- Cost = CPU + Storage + Data Egress
