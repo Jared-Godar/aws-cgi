@@ -196,3 +196,53 @@
 - **`AZ`** independent data center with its own resources
 - `Highly Available` configration requires 2 or more AZs
 - Cost = CPU + Storage + Data Egress
+
+---
+## Core services for Data Engineering
+
+> 12 services that get your data engineering journey going
+
+### Dozen services
+
+1. Elastic Compute Cloud (EC2) - *virtual machine (server*)
+2. Virtual Private Cloud (VPS) - *Logical Networking Isolation (Networking)*
+3. Identity & Access Management (IAM) - *Security policies, roles, and privileges*
+4. CloudWatch - *Activity Monitoring*
+5. Simple Storage Service (S3) - *Serverless object server*
+6. Athena - *Serverless SQL Engine for External Tables*
+7. Lambda - *Serverless Functions (Programs)*
+8. Simple Queue Service (SOS) - *serverless messaging for event-driven architectures*
+9. Simple Notification Service (SNS) - *notifications email/sms*
+10. Redshift - *cloud data warehouse*
+11. DynamoDB - *NoSQL Database*
+12. Relational Databae Service (RDS) - *Postgres, MySQL, Aurora Serverless*
+
+![week](week.png)
+
+- 12 out of 243 services
+- Data Science - want to do SageMaker in the cloud - learn process to go out and get it
+
+## EC2 - Intro
+
+- [ ] Get own free-tier instance
+- Service to deploy virtual machines / servers for a variety of computing workloads
+  - instance families (c*n*, m*n*, r*n*)
+  - `*n*` is the generation number
+- EC2 instances require VPC (Virtual Private Cloud)
+- Multiple pricing models
+  - `SPOT` - discounted, but can be removed with limited notice, need rules
+  - `RESERVED` - paid for up front, 1/3 years, most cost-effective that you can count on, paid whether you use or not
+  - `ON-DEMAND` - most expensive
+  -` SAVINGS PLANS`
+- Hibernating / stopping instance may or may not impact the bill, depending on pricing model used
+- Storage via `BLOCK DEVICES` - `INSTANCE STORE`(ephemeral), `EBS VOLUMES`(permanence)
+- Instance Store
+  - Data in not persisted across `STOP`, `TERMINATION` or `FAILURE(S)`
+  - EC2 instances backed up by Instance Store can **only** be **rebooted** or **terminated**
+- EBS VOlumes
+  - Can be `STARTED`, `STOPPED`, `HIBERNATED`, or `TERMINATED`
+  - Various types for a variety of workloads
+  - Supports full encryption but **ONLY with AWS-Managed keys**
+- EFS (Elastic File System)
+
+---
