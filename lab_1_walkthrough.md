@@ -15,7 +15,7 @@
     - [ ] Client `CGI`
     - [ ] Project `Data Engineer Academy`
     - [ ] Owner `gaja.vaidyanatha@cgi.com`
-    - [ ] Ttimecode `300000000040345`
+    - [ ] Timecode `300000000040345`
 - [ ] `Applications and OS Images(Amazon Machine Image') click quick start and 'Amazon Linux`
   - [ ] ***Amazon Linus 2AMI (HVM) - Kernel 5.10 SSD Volume Type***, free-tier eligible
 - [ ] Choose *free-tier eligible* instance
