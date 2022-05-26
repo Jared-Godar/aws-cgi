@@ -1,0 +1,1 @@
+aws s3 cp 2022_01_03_090200-data-normal-full-salesforce-sf-PROD-1.0-dim_customers-p63124.csv s3://bootcamp-s3-478003/inbound/staging/
