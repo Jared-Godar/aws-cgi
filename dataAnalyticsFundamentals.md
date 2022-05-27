@@ -129,7 +129,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 - A warehouse might contain all relevant sources for an enterprise, but a data mart might store only a single department’s sources.
 - Because data marts are generally a copy of data already contained in a data warehouse, they **are often fast and simple to implement**.
 
-![Lakewarehouse](lake_warehouse.png)
+![Lakewarehouse](images/lake_warehouse.png)
 
 ### Apache Hadoop
 
@@ -147,7 +147,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 - **Data processing** means the collection and manipulation of data to produce meaningful information. Data collection is divided into two parts, data collection and data processing.
 
 
-![batchstream](batchstream.png)
+![batchstream](images/batchstream.png)
 ### BAtch Processing
 
 - In batches
@@ -266,7 +266,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 - Transactional databases are called online transaction processing (OLTP) databases. The data gathered by OLTP databases is often fed into another type of database that focuses on analyzing the transactional data.
 - Online analytical processing (OLAP) databases gather data from OLTP systems for the purpose of organizing it for analytical operations.
 
-![oltp](oltp.png)
+![oltp](images/oltp.png)
 
 #### Row-based and columnar data indexing
 
@@ -282,7 +282,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
   - In this type of system, you might query to find out the total number of items sold on a specific date.
 - Both OLTP and OLAP systems can use either indexing method. However, there are advantages to choosing the method that is best suited to the types of queries that will be run the majority of the time.
 
-![rowcolumn](rowcolumn.png)
+![rowcolumn](images/rowcolumn.png)
 
 ### Relational database pros and cons
 
@@ -392,7 +392,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 - Another drawback is that non-relational databases do not perform as well as relational databases in applications that require extremely low transactional latency.
 - Finally, although non-relational platforms are constantly evolving and growing, there isn’t nearly the same maturity as relational technologies or the same amount of field expertise.
 
-![compare](comparedb.png)
+![compare](images/comparedb.png)
 
 ---
 
@@ -417,7 +417,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 - Was the entire data chain secure and uncompromised?
 - Understanding the full lifecycle of your data and knowing how to protect it effectively will greatly strengthen the integrity of your data.
 
-![lifecycle](lifecycle2.png)
+![lifecycle](images/lifecycle2.png)
 
 - **Data cleansing** is the process of detecting and correcting corruptions within data.
 - **Referential integrity** is the process of ensuring that the constraints of table relationships are enforced.
@@ -494,7 +494,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
   - However, the data will be available in whatever state it is during propagation of the change.
 - It is a method for maintaining consistency and integrity in a structured or semistructured database.
 
-![acidbase](acidbase.png)
+![acidbase](images/acidbase.png)
 
 ### BASE compliance
 
@@ -517,7 +517,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
 - In modern cloud-based environments, we often refer to this process as ELT (Extract, Load, Transform) instead
 - The steps are simply performed in a different order, but the result is the same.
 
-![etl](etl.png)
+![etl](images/etl.png)
 
 ### Transforming your data – comparing Amazon EMR and AWS Glue
 
@@ -579,7 +579,7 @@ This is where Amazon Redshift comes in. Amazon Redshift overcomes all of these n
   - Immediate visibility
   - Continuous insights
 
-![analysis](analysis.png)
+![analysis](images/analysis.png)
 
 ### Predictive analytics
 
@@ -694,7 +694,7 @@ re-playable reads and writes of large streams of data
 
 ## Key Takeaways
 
-![putItTogether](together.png)
+![putItTogether](images/together.png)
 
 ### Data platform engineer
 

@@ -54,7 +54,7 @@
   - Scalable
   - Cost-effective
 
-![needs](needs.png)
+![needs](images/needs.png)
 
 [ ] Read Monica Rogati's AI Hierarchy of Needs
 
@@ -146,7 +146,7 @@
 
 ## Serverless Data Integration on AWS
 
-![serverless](serverless.png)
+![serverless](images/serverless.png)
 
 1. Ingestion
    1. Kinesis (real-time)
@@ -217,7 +217,7 @@
 11. DynamoDB - *NoSQL Database*
 12. Relational Databae Service (RDS) - *Postgres, MySQL, Aurora Serverless*
 
-![week](week.png)
+![week](images/week.png)
 
 - 12 out of 243 services
 - Data Science - want to do SageMaker in the cloud - learn process to go out and get it
