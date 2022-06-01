@@ -1,0 +1,33 @@
+# AWS Office Hours
+
+- Document in Sharepoint detailing AWS architect journey (3-6 months)
+- AWS Certified Solutions Architect Study Guide 3rd edition book
+- Set up APN account with cgi email address
+- AWS pricing calculator useful for bonus
+- Costs components
+  - Compute
+  - Storage
+  - Egress
+- Exam: I want you to estimate -- pricing calculator
+- Cost calculator - real thing, what happened in the last month
+- AWS Budgets - exam old provisioned ec2 instances, help identify underutilization. What % allocated have you actually used
+- Deleted
+  - EC2
+    - Have an AMI - create from that
+  - DynamoDB
+  - SNS
+  - SRS
+- RDS lab instructions on channel
+  - Use syntax from the Redshift lab to create table
+  - bootcamp_rds_478003
+- Tomorrow: API gateway discussion
+- Download and install MySQLWorkbench
+- Cloud9
+- Install MySQL on EC2 instance
+- Working version of final Lambda
+- Save things locally
+- Make sure you have a good Lambda
+- Lambda console - export option
+- YAML vs Full-deployment package - use full deployment
+  - In zip there is the `.py` file with complete lambda
+- Change EMP_ID on `.py` files
