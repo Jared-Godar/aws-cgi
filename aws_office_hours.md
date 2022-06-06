@@ -31,3 +31,28 @@
 - YAML vs Full-deployment package - use full deployment
   - In zip there is the `.py` file with complete lambda
 - Change EMP_ID on `.py` files
+- How do you automate partition additions programatically?
+  - Declare an Athena Client or resource
+  - Run query that adds partition each time the Lambda runs
+  - ![athena](images/athena_partition.png)
+- `IF NOT EXIST` syntax
+- Build excel spreadsheet
+  - Findings
+  - Recommendations - instance to use
+
+# 06JUN
+
+- Phrase consturctive criticism with "Even better if..." Rather than "_______ but ___"
+- Make people feel comfortable and make sure others feel loved
+- Magic starts happening then - team chemistry looking out for each other
+- Build bond with each other over the academy to take with you
+- Feel like part of the fabric
+- Reach others on their level - diversity and inclusion
+- Sensecorp acquired by CGI - had good culture
+  - Participated in Ramadan fasting with folks
+- Kubernetes containers with different parameters
+  - Underlying essence is the same
+- If you hear anyone making a borderline snide / disrespectful / etc. remark - interdict immediately
+- 36 our fast every couple weeks. Water and tea. 11th day after the full moon. Start one evening after dinner - complete second day, then break fast the third morning.
+- Lamb biryani - Hyderabad
+- 
