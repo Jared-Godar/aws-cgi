@@ -55,4 +55,70 @@
 - If you hear anyone making a borderline snide / disrespectful / etc. remark - interdict immediately
 - 36 our fast every couple weeks. Water and tea. 11th day after the full moon. Start one evening after dinner - complete second day, then break fast the third morning.
 - Lamb biryani - Hyderabad
+
+## Resource management profile
+
+- Intranet home page
+- Top-right is CGI profile
+  - Short (3-4) sentences description
+  - Communication preferences
+  - Certifications
+- Right Column - RM
+  - My profile and Opportunities
+  - Add compentencies
+  - Around 13 rows (<15)
+  - SQL, Python, Databricks, Leadership, Data Engineering, etc.
+  - Helps people put you on their project
+
+## Certs
+
+- AWS and Azure AD solution Architecture
+  - Many companies are Microsoft Shops - set up in Active Directory
+  - Integration between cloud services and Azure AD
+- Google Cloud Platform
+- 
+## Project
+
+- Set up S3 bucket
+- Command prompt with CLI
+- Push file to S3
+- Lambda function fire on file
+  - Ask for sandboxed snowflake account
+  - Get a trial snowflake account
+  - Create a table
+  - See if you can use Lambda layers to transport data
+  - Run queries
+  - NEVERMIND Snowflake - use Redshif
+  - Lambda function to take S3 file to Redshift
+  - Redshift trigger to unload directory
+  - Another lambda puts it into dynamo db
+  - When lambda loads to redshift, posts SQS2; Another lambda gets that message, runs an unload command from redshift
+  - Third lambda adds to dynamo db
+  - Data to redshift
+  - Message sqs - lambda subscribed
+  - Lambda fires taking data to dynamodb
+  - Boto3 source to talk to redshift
+  - PK overwrite
+- Don't need a lot of data, but stitch it all together Labs with SQS
+- Pipeline demo would be cool
+  - Have 90% of the code from labs
+  - One extra lambda function with BOTO3 that talks to redshift.
+
+- Athena extra credit - project there.
+  - Write logs to S3
+  - Export to athena table
+  - Comfortable with S3 put object
+  - Can structure contents of file JSON dumps
+  - Athena query to bring to life
+- Leverage labs and do something that has a cool effect
+- Share screen to yourself in leb
+- STS S3 Call CLI push file can use customers CSV re-use tables
+
+- Build Website - Fighting the Nashville Blues, csvs with show information (can scrape)
+- Never stop learning and being inquisitive - continue to push and make things
+- Time when you are leaning something and feeling uncomfortable - it is usually a good thing.
+- 20-30 minutes of AWS a day for 90 days.
+  - Not 4 hours a week on a Friday.
+  - 30 minutes a day consistently
+- RDS cluster instances - stop / terminate once you are done with lab? Since it is serverless, don't need to turn off. Just make sure EC2 instances are down. It will come to life when you do something with it. Suspends / serverless not costing money when idle.
 - 
