@@ -1,7 +1,7 @@
 ###
 # Program Name  : fileProcessor
 # Creation Date	: 2021-12-21
-# Authors	    : Sahil Patel, Gaja Vaidyanatha & You :)
+# Authors	    : Sahil Patel, Gaja Vaidyanatha & Jared Godar
 # Description	: This program parses the filename landing in the s3 bucket - inbound/ folder, sets the various job variables and deletes the inbound file.
 #
 #
@@ -10,6 +10,7 @@
 # Date			    	Item
 # ----			    	----
 # 2021-12-21	    	Initial creation ###
+# 2022-06-09            Modification
 
 # Import required libraries
 import urllib
