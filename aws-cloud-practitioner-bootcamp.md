@@ -183,3 +183,37 @@
   - VX LAN technology to stretch data center fabric so localized events don't affect other AZs
 - Edge locations - major metropolitain areas that get data close to users
 
+### AWS Value Proposition
+
+- Agility
+  - Leveraging for rapid deployment, testing, experimentation, and innovation
+  - Overcoming geographical limitation
+  - Getting content as close to the consumer as possible
+  - Reducing time and cost for testing and experimentation
+  - Allows consumers better innovation
+- Elasticity
+  - Ability to almost instantly provision and de-provision resources
+  - Challenges with predicting gemand leads to higher costs
+  - Leveraging dynamic auto-scaling technologies
+  - > "Elasticity of the cloud allow us to add thousands of virtual servers and petabytes of storage within minutes, making such an expansion possible. Leveraging multiple AWS could regions, spread all over the world, enables us to dynamically shift around and expand our global infrastructure capacity, creating a better and more enjoyable streaming experience for Netflix members wherever they are." Yury Izrailevvsky, VP Cloud and Platform Engineering, Netflix
+  - Actual demand can more closely match provisioned resources through autoscaling technologies
+- Cost
+  - Reducing cost is the dominant factor in the value proposition for many customers
+  - Cabling, cooling, power, networking, racks, maintenance, servers, storage, training, labor, physical security, etc.
+- Flexibility
+  - AWS delivers a continuously increasing set of infrastructure and software services
+  - These can be leverages by all types of public and private organizations of all sizes and sectors
+  - Better engage with customers
+  - Manage internal processes
+  - Analyze data from internal and external sources to gain competitive advantage
+- Security
+  - IAM
+    - Identity and Access Management
+  - KMS
+    - Key Management Service
+  - VPC security
+    - Infrastructure security
+  - VPNs
+  - Secure Endpoints
+  - Secure, nondescript Datacenters
+    - Physical Security
