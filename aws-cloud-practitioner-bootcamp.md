@@ -118,9 +118,68 @@
       - Regions
       - Availability Zones
       - Edge locations - major metros near user
+  - **EXAMPLE** Virtual Private Cloud (VPC)
+    - Provision a logically isolated portion of the AWS cloud
+    - Have complete control over your environment
 - Platform-as-a-Service (PaaS)
-  - 
+  - Customers still do not manage / control AWS infrastructure
+  - Consumers control applications and services
+  - Programming languages, libraries, services, and tools
+  - Some services are more "managed" by AWS than others
+  - AWS takes on more responsibility in the shared management partnership
+  - .NET
+  - Java
+  - Python
+  - Ruby
+  - Go
+  - JSON/YAML
+  - Traditional or containerized
+  - Docker
+  - Podman
+  - **Example** Amazon Lightsail
+    - Offers everything needed to build an application or website using a cost-effective approach
+    - Virtual servers, storage, databases, and networking
+    - Excellent for simple web applications and sites, business software, and development / testing
 - Software-as-a-Service (Saas)
+  - Consumer uses the service provider's applications running on a cloud infrastructure
+  - Consumer often does not even manage or control the individual application capabilities
+  - Look at AWS Marketplace Subscriptions
+  - [Zoho](www.zoho.com)
+  - HR
+  - Billing
+  - Marketing
+  - Sales
+  - Helpdesk
+  - Call center
 - Falls into the Shared Responsibility Model
-  - Partnership between customer and provicer
+  - Partnership between customer and provider
   - Security
+
+### AWS Cloud Deployment Models
+
+- Cloud-based
+  - Fully deployed in AWS Cloud
+  - Every componenet of the application operates in the cloud infrastructure
+  - Cloud-based applications have either been generated in the cloud or have been transferred from an existing enterprise
+  - Can be built on low-level virtualized infrastructure components
+  - Can also leverage higher level services that abstract from the management, architectural, and scaling needs of the core infrastructure
+- Hybrid
+  - A method for connecting infrastructure and applications between AES Cloud-based resources and other resources that are not placed in the cloud
+  - The most common type of hybrid deployment is between the provider's cloud and a standing on-premesis enterprise
+  - Can be used to migrate, expand, or grow an organization's infrastructure into a cloud solution while linking internal systems to AWS Cloud resources
+  - Often used by organizations to "burst up" to the cloud during peak demand times or special situations
+- On-premesis
+  - Entails using virtualization and resource management tools on-site only
+  - Sometimes called a "private cloud" deployment although resources can be hosted privately at AWS
+  - Does not offer the benefits of cloud computing but is often needed for regulations and governance
+  - They deployment is very similar to a traditional IT infrastructure
+  - The difference is that the entity is using hypervisors, application management, and other virtualization technologies to attempt to enhance resource utilization and lower costs
+
+### Introduction to Amazon Web Services
+
+- Global infrastructure
+- Many regions, worldwide
+  - At least 3 availability zones per region
+  - VX LAN technology to stretch data center fabric so localized events don't affect other AZs
+- Edge locations - major metropolitain areas that get data close to users
+
