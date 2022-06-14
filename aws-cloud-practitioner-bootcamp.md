@@ -774,7 +774,6 @@
   - Crowdstrike
   - Rapid7
 
-
 ## Client-side Encryption
 
 - S3
@@ -790,7 +789,7 @@
 
 - Have the service encrypt your object
 - AES-256 - use amazon S3 server-side | Traditional server-side encryption
-- AWS-KMS | Key management service 
+- AWS-KMS | Key management service
 
 ## AWS Key Management Service
 
@@ -807,10 +806,188 @@
 1. Infrastructure Security
    - Managed site-to-site VPN
    - VPC
-   - unique identifier - VPG_____ 
+   - unique identifier - VPG_____
    - Network ACLs (NACLs)
    - Extension of site-to-site VPN virtually extending private network to subnet
-   - 
 2. IAM
 3. KMS
+
+---
+
+## AWS Compute Services
+
+- Serverless containers or servers
+- EC2
+  - Resizable and secure compute capacity in AWS cloud
+  - Makes rapid web-scale cloud computing easier
+  - Simple web service interface
+  - Control resources running on an established computing infrastructure
+  - Increase or decrease capacity in minutes
+  - Select flexible configurations
+  - Securely integrate with most AWS services
+  - Highly available, reliable, and durable
+  - Convertible reserved instances
+    - Offers significant discount (45% less than on demand)
+    - Allow you to change the instance family and other parameters associated with a Reserved Instance at any time
+    - Flexibility - can convert instance family
+- Lightsail
+- Elastic Beanstalk
+  - Traditional application development platform
+  - Docker (go, .net, php. python)
+  - Deploy, monitor, and scale web applications and services
+  - Upload application or use a sample code from AWS
+  - Run it
+- Lambda
+  - Run code withot deploying or managing servers
+  - Pay only for compute time you consume - no charge when code not running
+  - Run Code for virtually any type of application or backend service
+  - Zero administration
+- Elastic Container Service (ECS)
+- Monolithic vs. Microservices
+  - Monolithic - heavily coupled and dependent systems. One failure will crash all
+  - Micro
+    - compartmentalized modules
+    - services to communicate between components
+    - modular, transportable
+    - decoupled
+
+## SNS and SQS
+
+- Simple Notification Service (SNS) is a publish/subscribe service
+  - Topic - publisher distributes messages to subscribers
+- Simple Queue Service (SQS) lets you
+  - Send
+  - Store
+  - Receive
+  - Between software components
+  - Without losing messages or requiting other services to be available
+
+## Containers II
+
+- Discrete environment within OS where one or more application can urn
+  - Assigned all the resources and dependencies needed to function properly
+- Docker is the most common platform for developing "containerized" applications
+- Amazon Elastic Container Service (ECS) is a fully-managed container orchestration service
+- AWS Fargate is the preferred way for customers to run containers on AWS across both ECS and EKS Elastic Kubernetes
+
+## Auto Scaling
+
+- Monitors applications and automatically modifies capacity to retain stable and predictable performance at the lowest cost
+- Build scaling plans for O/S instances, fleets, tasks, tables, indexes
+- **Dynamic or Predictive Scaling**
+  - Launch template
+    - Min size
+    - Desired capacity
+    - Max size - only scale up to what is affordable
+  - Predictive - scheduled basis
+  - CloudWatch for Dynamic scaling then go to predictive
+
+## Elastic Load Balancing (ELB)
+
+- Automatically dispenses incoming traffic across targets
+  - EC2
+  - IP
+  - Containers
+  - Lambdas
+- Can be public-facing or internal
+- **Application** Load Balancer is for load balancing http/https traffic for delivering modern application architectures
+  - Run a listener
+  - Decrypt
+- **Network** load balancer is for TCP, UDP, and TLS traffic routing to VPCs optimized for high-speed, low-latency traffic
+  - Replicated services across multiple availability zones
+- **Gateway** Load Balancer is used for virtual appliances and testing the marketplace
+  - Third party routers
+
+## AWS CloudFormation
+
+- Common language to template the cloud environment
+- Infrastructure-as-code deployment with stacks
+- Configuration in simple text file format
+- Serves as the "single source of truth" for environment
+- Safe, Secure, repeatable
+- Many templates to choose from
+- Can view in lucidchart environment
+
+## Reminder - 4 services called "Cloud" Something
+
+- Cloud Formation
+  - Infrastructure as code
+- Cloud Trail
+  - Monitor API calls
+- Cloud Front
+  - Content delivery
+- Cloud Watch
+  - Global monitoring and visualization tool
+
+---
+
+## Elastic Block Storage (EBS)
+
+- Persistent block storage volumes for use with EC2 and Amazon Cloud
+- Automatically replicated with AZ
+  - Protect from component failure
+  - High availability and durability
+- Consistent and low-latency performance
+- Fixed-sized volumes on hard or SSDs accessed over the network
+- Can attach or detach from instance
+- If you terminate the instance, your data is still stored, just unmounted
+- Ephemeral storage
+  - Also volume / block
+  - Directly attached to hypervisor
+  - If you stop the instance, you lose the data on the ephemeral drive
+
+## Amazon Elastic File System (EFS)
+
+- Simple, scalable, elastic file system for Linux-based workloads for use with AWS Cloud services and on-premesis resources
+- Built to scale on demand to  petabytes without disrupting applications, growing and shrinking automatically as you add and remove files
+- Fully-managed service
+  - Requires no changes to applications and tools
+  - Access through standard file system interface
+  - Seamless integration
+- **EFS in only Linux**
+
+## S3 - Object Storage
+
+- Constructed to store and get unlimited volumes of data from anywhere on the internet
+- Highly-available
+- Extremely durable
+- Enormously scalable data storage
+- Very low cost
+- URL
+- API call
+- Robust metadata
+- No file system
+- Flat space to store objects
+- Simple web service interface
+- Store and retreive any amount of data at any time
+- Easily build application that use internet storage
+- Highly flexible and scalable
+- Easy for CDN developers
+- Standard 11x9
+- IT 39
+- SIA - infrequent access 1ZIA - one zone infrequent access
+- Glacier / Deep Archive - 11 9s cheap archiving
+- IT - intelligent tier - can move things where they belong for you
+
+## Storage Gateway
+
+- AWS Storage Gateway is a hybrid storage service that enables your on-premises applications to seamlessly use AWS cloud storage
+- Use for backup and archiving
+- Disaster recovery
+- Cloud data processing
+- Storage tiering
+- Migration
+- Can be appliance-based of hypervisor
+- Often used in conjunction with Direct Connect 10 Gbps
+- Large amounts of data to S3
+
+## Snow Family
+
+- Out of band
+- Snowcone
+- Snowball
+- Snowmobile
+- Large amount of data to services
+
+---
 
