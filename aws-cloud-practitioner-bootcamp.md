@@ -419,7 +419,113 @@
   - 0.0.0/0 - IGW internet gateway - public subnet
   - VPG - VPN only subnet
 - Internet Gateways
+  - Horizontally scaled, redundant, highly available VPC component
+  - Facilitates communication between VPC instances and the internet\Imposes no availability risks or bandwidth constraints on your network traffic
+  - Provides a target in our VPC route tables for traffic routable on the internet
+  - Performs network address translation (NAT) for instances that have been assigned public IPv4 addresses
+  - If instance is stopped, lose auto-assigned auto IP address. Need an elastic address to have e fixed IP allocated to account.
+  - Can associate elastic addresses with an instance or an elastic manager. Don't lose when instance is terminated, but it does cost money to have them allocated.
 - NAT Gateways
+  - Only for IPv4
+  - Network Address Translation Gateway
+  - Enable instances in a private subnet to connect to the internet or other aws services, while preventing the internet frominitiating a connection with those instances
+  - Windows updates, upgrades, security patches, etc
+  - Charged for creating and using NAT gateway in your account with hourly usage and data processing rates
+  - For IPv6, use Egress-Only Internet Gateway (EOIG)
+    - Outbound communications over IPv6 from instances in your VPC to the Internet
+    - No inbound traffic
+    - Supports IPv4 & IPv6
+    - No Network Address Translation in IPv6
+- DHCP Options
+  - If you don't want to use the Amazon DNS services and use your own, you use DHCP
+
+### Endpoints
+
+- VPC endpoints allow you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS PrivateLink without needing an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection
+- Instances in your VPC do not need public IP addresses to communicate with resources in the service since traffic between your VPC and the other network services does not leave the Amazon network
+- Endpoints are virtual VPC devices
+- Provided by AWS
+- When you generate a gateway endpoint, you simply designate the subnet route tables in your VPC that are used by the gateway endpoint
+- A route is automatically added to each of the route tables with a destination that specifies the prefix list ID of the service and a target with the endpoint ID
+- You cannot explicitly delete or modify the endpoint route, but you can change the route tables that are ussed by the endpoint
+
+### Connecting to your VPC
+
+- AWS site-to-site (managed) VPN
+- AWS Direct Connect
+  - Bypass the internet
+  - Customer premesis equiplent support Border Gateway Protocol
+- AWS Direct Connect plus VPN
+- AWS VPN CloudHub
+- Software VPN
+- Transit Gateway
+- Client VPN Endpoints
+
+## Results of Shared Responsibility
+
+- What content customers choose to store or migrate on AWS
+- Which AWS services are used with that content
+- In what country that content is stored
+- The format and structure of the content
+- Masked, anonymized, or encrypted
+- Who has access
+- How those rights are granted, managed, and revoked
+
+## Risk Treatment
+
+- Avoidance
+  - Upload
+  - Store in reasons
+- Reduction
+  - Countermeasures
+  - Key Management
+  - Disaster Recover
+    - AWS Endure
+- Transfer/share
+  - Use AWS
+- Acceptance
+
+## Compliance
+
+- Compliance services help you realize AWS controls
+- Compliances is part of shared responsibilities
+- Utilize "governance-focused" and "audit-friendly" services
+- Enablers are constructed on traditional compliance programs
+- AWS offers an extensive array of control information
+- Understand what controls are available
+
+### AWS Artifact
+
+- You may need to uphold specific standards as proven through an audit
+- Inspection will ensure company has met standards
+-** Console-based, on-demand, self-servicing auditing object retrival service**
+- Quick and easy access to AWS compliance documentation and agreements
+  - AWS ISO Certifications
+  - SOC Reports
+  - Review and Accept
+  - Track Status
+  - Manage BAA
+  - PCI Reports
+- Artifact **Agreements** let you review, accept, and manage agreements for an individual account and for all your accounts in AWS organizations
+- Artifact **Reports** provides compliance reports from third-party auditors who have tested and verified that AWS is compliant with a variety of global, regional, and industry-specific security standards and regulations
+
+## Customer COmpliance Center
+
+- Resources to assist customers in learning more about AWS compliance
+- Compliance stories and case studies
+- Auditor learning path 
+
+### Cloud Security Alliance (CSA)
+
+- Consensus Assessment Initiative Questionnaire
+- Not-for-profit enterprise with a mission to promote the use of best practices for providing security assurance within could computing and to provide education on the uses of cloud computing to help secure all other forms of computing
+- Security Trust Assessment and Risk
+- Cloud Adoption Framework (AWS CAF)
+  - Free course
+  - Organizes guidance into six areas of focus, called Perspectives
+  - Each Perspective speaks to the discrete responsibilities
+
+
 ## Security
 
 ## Client-side Encryption
