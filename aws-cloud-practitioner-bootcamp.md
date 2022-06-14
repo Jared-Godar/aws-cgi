@@ -525,8 +525,255 @@
   - Organizes guidance into six areas of focus, called Perspectives
   - Each Perspective speaks to the discrete responsibilities
 
+---
 
-## Security
+- Look for supporting documents on Percipio
+- Sys Ops Admin Associate - next AWS cert
+- Same stuff, plus some configuration
+- This is also useful for Google Cloud, many similarities
+- Azure also worthwhile
+
+## Choosing the right region
+
+- When selecting the proper region for your services, data, and applications, consider the following four factors:
+  - Compliance with data governance and legal requirement
+  - Proximity to customers
+  - Available services within a Region
+  - Pricing
+
+## Administer AWS from a Master Account
+
+- Policy-based management
+  - Create groups
+  - Automate account creation
+  - Apply ana manage policies for account groups
+- Simplify costs and take advantage of quantity discounts with a **simgle consolifated bill**
+- Centrally manage **Service Control Policies (SCPs)** across multiple accounts without using custom scripts or manual processes
+- Master Account (Organizational Unit)
+  - Dev
+  - Test
+  - Production
+- Within IAM, administrator access is a high privileges level that can do almost everything Root can
+
+### AWS Control Tower
+
+- Enterprises with multiple AWS accounts can use CT to easily set up and manage a secure, multi-account environment
+
+### Support Models
+
+- Basic- only free
+- Developer
+- Business
+- Enterprise
+  - 2 flavors
+- Only business and enterprise plans
+  - AWS Shield Advanced
+    - 24/7 DDOS response team
+  - Infrastructure Event Management
+    - Architecture and scaling Guidance
+    - Operational support for additional fee
+  - AWS Support API
+    - Programmatic access to features
+  - Enterprise only
+    - Concierge support team
+  - All 115 Trusted advisor checks (5 areas)
+    - 14 cost optimization
+    - 17 security
+    - 24 fault tolerance
+    - 10 performance
+    - 50 service limits
+
+## Trusted Advisor
+
+- Online tool for realtime guidance on provisioning resources using AWS best practices
+  - Optimize infrastructure
+  - Increase security
+  - Enhance performance
+  - Reduce costs
+  - Monitor service limits
+- Basic and Developer support plan
+  - 7 security checks
+  - 50 service limit quota checks
+  - S3 bucket permissions
+  - Security groups
+  - IAM use
+  - MFA on root
+  - EBS and RDS public snapshots
+
+## Identity and Access Management (IAM)
+
+- Core AWS security service that enables the Secure control of AWS
+- CloudTrain for visibility for unauthorized API c alls
+- Manages who is signed in and their permissions
+- Root account access is separate from IAM
+  - Single, standalone sign-in identity
+- Root has total access to all AWS services and resources
+- Do not use root account for common tasks
+  - Only to create your first IAM highest privilege administrative user
+- IAM dashboard - MFA for Root
+  - Root user has no active access keys - not using root for CLI
+- Groups of users
+  - Roles
+    - Policies
+      - JSON documents
+  - Can attach up to ten policies per group
+- Role
+  - Entity that gets a policy / permission
+- Dev/Prod accounts with groups and users
+  - S3 in prod - give temporary permission to user in dev
+  - Trusted / trusting accounts
+  - Trusting account - create role, assign permissions assign role to person in trusted account - time-based token
+- Documents, best practices, tools
+  - Policy simulator
+  - For a role, what can they do
+- Access Analyzer
+  - ML reporting
+
+
+## Creating CLI Access
+
+- Access key / keyID for programatic
+- Least privilege principle
+- Creating users / policies
+  - Administrator access, most
+  - DBA + read-only, see everything in console, even though they can only write specific permissions
+- Download on windows
+- Mac / Linx pip install
+- right click, CMD.exe as administrator
+- AWS COnfigure
+  - Access key
+  - Secret access key
+  - Default region
+  - Default output - JSON
+
+### IAM Managed Policies
+
+- Standalone permission set
+- Amazon Resource Name (ARN) with policy name
+  - `arn:aws:iam::aws:policy/IAMReadOnlyAccess`
+- Permissions for many common AWS use cases
+  - Full-Access
+  - Power-User
+  - Partial-access
+- Can apply a policy to s user, group, or role
+
+### Roles
+
+- Identity that has permission assigned
+- Assumed by user, application, or service
+- No long-term credentials
+- Temporary for lifetime of session
+- Often used to give access to identities outside of AWS
+- AWS STS Temporary credentials
+  - Web service for creating temporary credentials
+    - In you own code
+    - CLI
+    - Third party tools
+  - Assumes necessary IAM roles with the trusted relationship
+  - Temporary, time-limited, permission-based credentials for a validity period
+- Generate from CLI or with code
+- Bastion (jump) hosts - don't use. Instantiate service on server, vulnerabilities if customers don't patch and update
+
+### Access keys
+
+- Applications running outside of AWS will need access keys
+- AWS SDKs will have digital signatures
+- Signing protects message integrity by preventing tampering
+- Requests must reach AWS within 15 minutes of time stamp
+- Version 4 offers Forward Secrecy
+
+## AWS Single Sign On (SSO)
+
+- Active directory at your site used to sign on
+- SAML protocol (Security Assertion Markup Language)
+
+## AWS Cognito
+
+- Supports authentication methods
+  - Apple
+  - Facebook
+  - Google
+  - Twitter
+  - SAML - web
+  - OpenID - mobile app
+  - Amazon
+  - Etc.
+- Cognito user pool
+- Use existing account to sign on
+- User-friendly, automated tool for developers to use other sign ons for web or mobile apps
+
+## Network ACLs (NACLs)
+
+- Determine what type of subnet
+  - IG - Public
+  - VPG - VPN
+  - Private
+- Infrastructure security
+- Firewalls
+  - Layer 3/4 of model
+  - Based on headers of protocols
+  - IPv4/6 header
+  - ICMP message types and codes
+  - TCP/UDP
+  - Make decisions based on metadata
+  - Web application firewall - deep packet inspection from layer 7
+- NACLs
+  - Allow stateless traffic filtering to all inbound or outbound traffic on a VPC subnet
+  - Apply to all instances in the associated subnet
+  - Can contain ordered rules to permit or deny traffic
+    - Match rule
+      - Allow or deny
+      - Move to next packet
+    - Rules applied in order
+    - Implicit deny at end
+  - Agnostic of TCP sessions of UDP/ICMP flows
+  - Stateless (static) in that the return traffic must be explicitly allowed in the other NACL
+  - Work together with security groups and can permit or deny traffic before it reaches the interfaces
+- Can be applied dynamically to stop/ halt an attact
+
+## Security Group
+
+- Applied directly to instance at hypervisor level
+- Layer 3/4 like NACLs
+- Whitelist firewall
+- Applied to individual EC2 instances
+- Stateful virtual allow only firewall - no explicit deny rules
+- Hypervisor level attached to virtual elastic network interfaces (eth0)
+- All EC2 instances are launched with the default SG unless otherwise designated
+- An unchanged default SG allows communication between all resources within the security group and all outbound traffic
+  - All other traffic is implicitly denied
+- Stateful - http is tcp based, three way handshake
+- NACL must be in agreement with Security Group
+- Subject to inspection
+  - AWS Shield
+
+## Web Application Firewall
+
+- Control and monitor http/https requests forwarded to CloudFront (CDN), Application Elastic Load Balancer (ELB), or API gateway
+- Allow all requests except for ones you designate (permissive)
+- Block all requests except for the ones you designate (restrictive)
+- Count the requests that match the properties you specify
+
+## AWS Shield
+
+- Standard and Advanced options
+- DDoS protection provided at no extra costs
+- Basic protection against common DoS floods and exploits
+- Additional protection from known DDoS attacks
+- Most common DDoS comes from botnet servers
+
+## Guard Duty
+
+- Fully-managed threat detection service
+- Looks for anomalies and unauthorized actions
+- Monitors for zero-day activities
+- Produces well-defined "findings"
+- Uses ML/AI
+- Based on a partnership with several companies
+  - Trend
+  - Crowdstrike
+  - Rapid7
+
 
 ## Client-side Encryption
 
