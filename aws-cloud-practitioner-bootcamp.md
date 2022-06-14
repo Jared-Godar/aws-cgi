@@ -217,3 +217,247 @@
   - Secure Endpoints
   - Secure, nondescript Datacenters
     - Physical Security
+
+---
+
+## Part II
+
+### Review
+
+- How to tell difference between Saas,  Iaas, PaaS
+  - If you choose the OS -- IaaS
+  - Go to AWS and they provide the underlying OS, thats PaaS
+
+## Cloud Economics
+
+- AWS offers an enormous variety of services, products, and solutions that empower organizations to be successful and profitable in meaningful and measurable ways
+- Enterprises make larger annual financial commitments to AWS
+- Organizations deploy more mission-critical workloads on AWS
+- AWS has a broader range of customer profiles from startups to small and midsized businesses to large enterprises.
+- AWS is the most mature, enterprise-ready provider, with the strongest track record of customer success and the most useful partner ecosystem
+
+### AWS Free Tier Model
+
+- 12 months Free
+- Always Free
+- Trials
+  - SaaS providers
+- The ability to explore and try out AWS free of charge up to specified limits for eeach service
+- Services with 12-month Free Tier allow customers to use the product for free up to itemized limits for one year from the date of the account creation
+- If your usage exceeds the free tier limits, you pay as you go
+
+### Pay as you go pricing
+
+- Foundational approach - pay for what you use
+- You will only pay for the specific services that you need and only for the time that you are utilizing them
+- You will only incur fees for the actual resources and services that your enterprise uses
+- AWS Pricing site
+- AWS Pricing calculator
+  - Estimate monthly bill
+  - Individual or multiple prices using templates
+- No need to overcommit on budgets
+- Improve reactiona dnd response
+- Adapt to real needs not forecasts
+- Reduce risk of over-provisioning or missing capacity
+- Stay agile and reactive
+- Always meet scaling demands
+- Redirect focus to innovation and modernization
+- Reduce the difficulty and complexity of procurement
+- Empower BU to be fully elastic
+
+### Save When you Reserve
+
+- Reserved instances for EC2 & RDS
+- If you pay up front for 1 / 3 year commitment for up to 75% discount
+- Three options
+  - All up-front (AURI)
+  - Partial up-front (PURI)
+  - No upfront payments (NURI)
+
+## Save when you use more
+
+- Volume discounts
+- Pricing calculator
+- Support plans
+  - Trusted advisor* Free for all
+  - Health dashboard* Free for all
+  - Developer - all experimenting / testing $29/mo
+  - Business
+  - Enterpries on-ramp
+  - enterprise
+
+---
+
+## AWS Well-Architected Framework
+
+- Helps customers understand how to design and drive dependable, secure, proficient, and cost-effective systems in the AWS cloud
+- Method to consistently measure an architecture against best practices and proven design principles as well as detect areas for improvement
+- Were 5 pillars, now 6
+- On exam? 5 or 6
+- Operational Excellence
+  - **Perform operations as code**
+  - Make frequent, small, reversible changes
+  - Refine operations procedures frequently
+  - Anticipate failures
+  - Learn from all operational failures
+- Security
+  - Implement a strong identity foundation
+  - **Enable traceability**
+    - Cloud train - insights to all API calls
+  - Apply security at all layers
+  - Automate security best practices
+  - Protect data in transit and at rest
+  - **Keep people away from data**
+    - No direct access to data at rest
+    - Abstracted
+  - Prepare for security events
+- Reliability
+  - **Automatically recover from failure**
+  - **Test recovery processes**
+  - Scale horizontally to increase aggregate workload availability
+  - **Stop guessing capacity**
+  - Manage change in automation
+- Performance Efficiency
+  - Democratize advanced technologies
+  - Go global in minutes
+  - Use serverless architecture
+  - Experiment more often
+  - Consider mechanical sympathy
+- Cost Optimization
+  - Implement cloud financial management
+  - Adopt a consumption model
+  - Measure overall efficiency
+  - Stop spending money on undifferentiated heavy lifting
+  - Analyze and attribute expenditure
+- Sustainability
+
+### Virtualization
+
+- Hypervisor is the software that produces and manages a virtual infrastructure
+- Allowing multiple OS to run and share resources on a single physical machine
+- Virtual machine manager
+
+### Containers
+
+- Most popular way to do PaaS
+- Build and run containerized applications
+- Discrete environment within an OS where one or more applications can run
+  - Typically assigned all the resources and dependencies needed to function
+- Can also use containers for processes and workflows
+  - Security, reliability, scalability
+- Elastic Container Service (ECS) if a fully-managed container orchestration service
+- Often immutable - to change, replace like an object
+- Has everything necessary to run program
+
+### Root user
+
+- Only use for root functions
+  - Add card
+  - Change billing
+  - Management support options
+  - Create organization
+  - Close AWS account or sign up for GovCloud
+  - Transfer a Route 53 domain to another account
+  - Create an AWS-created X.509 signing certificate
+- Create IAM role and use that for 99% of activities
+- IAM password policy does not apply to root account
+
+## CLOUD WHATEVER
+
+- Four services on the exam that start with the word cloud
+  - Cloud Formation
+    - Infrastructure as code -JSON / YAML
+  - Cloud Front
+    - Content delivery networking
+  - Cloud Train
+    - APIs
+  - Cloud Watch
+
+## Virtual Private Clouds (VPCs)
+
+- AWS Virtual network service
+- VPS lets you spin up AWS resources into a virtual network that you've defines
+- Closely emulates a traditional net
+- Get a default VPC when you create an account
+  - Could delete it (but don't)
+- Can create your own in one of several ways
+- Up to 5 total per account
+- Logically isolated from other virtual networks
+- Launch resources like EC2 instances in the VPC
+- Activities
+  - Create subnets
+  - Specify IP address ranges
+  - Configure route tables
+  - NACLs
+
+## Amazon Machine Images (AMIS)
+
+- Instantiate through EC2
+- Launch an instance of OS
+- Define preferred AMI for instances
+- Can spin up multiple instances derived from a single AMI
+- An instance root volume template or one or more Elastic Block Storage (EBS) snapshots
+- Permissions that allow you to manage the AWS accounts that launch instances using the AMI
+- Specifications of the attachable volumes to use when launching an AMI based on a block device mapping
+- Configuration templtes LINX/MAC/Windows
+
+---
+
+## Networking Fundamentals - in VPS Dashboard
+
+- Subnets
+  - IP v6 not enabled by default - must explicitly use
+  - Range of IP addresses in VPC
+  - Distinguished based on the entries in the Route Table assigned to it
+  - Types - determined by route table
+    - Private - no entry in the route table out of the subnet, sandbox
+    - Public - entry to internet gateway
+    - VPN-only - entry to a VPG
+  - Each subnet has one and only one route table
+- Route Tables
+  - local VPC
+  - 0.0.0/0 - IGW internet gateway - public subnet
+  - VPG - VPN only subnet
+- Internet Gateways
+- NAT Gateways
+## Security
+
+## Client-side Encryption
+
+- S3
+- Glacier
+- EBS
+- Dynamo DB
+- RDS
+- Redshift
+- Encrypt your own data, then upload it to amazon
+- EC2 instance encrypts and uploads encrypted data to the cloud
+
+## Server-side encryption (SSE SSE)
+
+- Have the service encrypt your object
+- AES-256 - use amazon S3 server-side | Traditional server-side encryption
+- AWS-KMS | Key management service 
+
+## AWS Key Management Service
+
+- Customer Master Keys (CMKs) are the main resource of the KMS service
+- You can use the CMK to encrypt up to 4 KB of data
+- Typically, you use CMKs to generate, encrypt, and decrypt the data keys that you use outside of AWS KMS to encrypt your data
+- Three types:
+  - Customer-manages
+  - AWS-managed
+  - AWS-owned
+
+## Security triad
+
+1. Infrastructure Security
+   - Managed site-to-site VPN
+   - VPC
+   - unique identifier - VPG_____ 
+   - Network ACLs (NACLs)
+   - Extension of site-to-site VPN virtually extending private network to subnet
+   - 
+2. IAM
+3. KMS
+
