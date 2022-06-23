@@ -985,9 +985,152 @@
 
 - Out of band
 - Snowcone
+  - Portable rugged secure data bod
+  - Collect process and transfer up to 8TB
+  - Offline - ship device
+  - Online - DataSynch
 - Snowball
+  - Compute Optimized
+  - Storage optimized
+  - 80 TB
 - Snowmobile
+  - up to 100 PB
+  - 45-foot-long rugged shipping container
+  - Exabyte-scale digital media migrations
+  - Data center shutdowns
 - Large amount of data to services
 
 ---
 
+## Database Service
+
+| Type        | Use                                                         | Service               |
+| :---------- | :---------------------------------------------------------- | :-------------------- |
+| Relational  | Traditional, ERP, C                                         | Aurora, RDS, Redshift |
+| Key-value   | High-traffic web, e-commerce, gaming                        | DynamoDB              |
+| In-memory   | Caching, session management, gaming leaderboards, GSA       | ElastiCache           |
+| Document    | content management, catalogs, user profiles                 | DocumentDB            |
+| Wide column | Equipment maintenance, fleet management, route optimization | Apache Cassandra      |
+| Graph       | Fraud detection, social networking, recommendation engines  | Neptune               |
+| Time Series | IoT apps, DevOps, industrial telemetry                      | Timestream            |
+| Ledger      | Record, supply chain, registrations, banking                | QLDB                  |
+
+## Amazon RDS
+
+- Managed, Platform as a service database
+- Aurora
+- MySWL
+- MariaDB
+- PostgreSQL
+- **Oracle** - database migration service to RDS
+- Microsoft SQL Server
+- Fully managed
+  - Aurora
+    - MySQL
+    - PostgreSQL
+    - Can be run serverless
+
+## DynamoDB
+
+- Made for amazon sales
+- Edge locations in ElastiCache Redis memory chip arrays
+- Key-value and document (NoSQL) database tat provides single-digit millisecond performance at any scaly
+- Fully-manages
+- Multi-region
+- Multi-master
+- Built-in security
+- Backup and restore
+- In-memory caching
+- internet-scale applications
+- More than 10 trillion requests per day
+- Peaks over 20 million requests per second
+- Over 100,000 AWS clients use DynamoDB as their key-value and document database
+
+## ElastiCache - Redis or Memcached
+
+- Easy to deploy, operate, and scale an in-memory cache in the cloud
+- Improves web application performance
+  - Retrieve information from fast in-memory cache
+  - Not slower disk-based databases
+- Supports Redis (proprietary) and Memcached (open-source) in-memory caching engines
+
+## Redshift
+
+- Clusters provide fast, scalable data warehouse
+- Analysis across data warehouses data lakes
+- Parallel ML algorithms
+- COlumnar storage on high performance disks
+- High security 4-key nested encryption model
+- Can use AWS gateway or Snow something
+
+## CloudWatch
+
+- Management and governance
+- Monitoring and management service designed for developers, system operators, site reliability engineers, and managers
+- Data, metrics, actionable insights
+  - Monitor applications
+  - Recognize and respond to system-wide performance changes
+  - Optimize resource utilization
+  - Gain a unified view of operational health
+- Monitor critical metrics and logs
+- Visualize application and infrastructure stack
+- Generate alarms
+- Correlate metrics and logs to recognize and resolve root cause of performance issues
+- Monitor Applications and Triggers
+  - Alarms
+  - Lambda workflows
+  - Enhance customer experience
+- Explore, analyze, and visualize logs instantly
+  - Optimize resources
+  - LEverage CloudWatch Alarms
+  - Automate capacity
+  - Resource planning for Auto Scaling
+  - Log, continuously monitor, retain account activity related to all API calls
+  - Insights can be enabled to automatically detect unusual API activities
+  - Eg., detect higher number of EC2 instances recently launched in an account; abnormal account activity has occurred
+    - Review full event details to determin actions to take
+  - **Cloud Trail can be used to get insights into Security Events**
+  - ID which users and accounts called AWS
+  - Source IP address
+  - When calls occurres
+  - Add specific policy to S3 bucket when CloudTrain logs an API call that makes that bucket public
+  - Connect your VPC to CloudTrain by defining an interface VPS endpoint for CloudTrail
+
+## AWS X-Ray
+
+- Assists developers in analyzing and debugging production, distributed applications (microservices)
+- Better understand how your application and its underlying services are performing
+- Identify and troubleshoot the root cause of performance issues and errors
+- Get an end-to-end view of requests that traverse through the application and display a map of the underlying components
+- Debugging
+- Testing
+- Fuzzing
+- Measure performance
+- Root cause of errors
+
+## Amazon Kinesis
+
+- ML
+- Gather, process, and analyze real-time, streaming data
+- Get well timed insights
+- React quickly to new data
+- Cost-effectively process streaming data at any scale
+- Flexibility to select best tools for your application
+- Consume real-time video, audio, application logs, clickstreams, IoT telemetry for ML, analytics and other applications
+- Process and analyze data as it arrives
+- Respond rapidly
+- Don't have to wait until all the data is in
+
+## Cloud Endure
+
+- Disaster Recovery automated IT resilience solution
+  - Unexpected outages
+  - Data corruption
+  - Ransomware
+  - Malicious attacks
+- AWS Application Migration Service (CloudEndure MIgration) simplifies, accelerates, automates migration from physical, virtual, and cloud-based infrastructure to AWS
+- Elastic Disaster Recovery (CloudEndure Disaster Recovery) Reduces downtime and data loss
+  - Fast, dependable recovery of physical, virtual and cloud-based services to AWS in the event of IT disruptions
+
+- Well architected Labs
+  - Hands-on experience
